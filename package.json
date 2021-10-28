@@ -1,0 +1,25 @@
+{
+  "name": "website-svelte",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.21",
+    "@sveltejs/kit": "next",
+    "lodash-es": "^4.17.21",
+    "sass": "^1.43.2",
+    "svelte": "^3.34.0",
+    "svelte-preprocess": "^4.9.8"
+  },
+  "type": "module",
+  "dependencies": {
+    "clipboard": "^2.0.8",
+    "d3-scale": "^4.0.2",
+    "file-saver": "^2.0.5",
+    "html-to-image": "^1.9.0",
+    "tippy.js": "^6.3.2"
+  }
+}

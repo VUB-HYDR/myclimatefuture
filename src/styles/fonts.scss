@@ -1,0 +1,29 @@
+// We use subsets of the fonts created with this tool: https://everythingfonts.com/subsetter
+// Read here why: https://iainbean.com/posts/2021/5-steps-to-faster-web-fonts/
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/FiraSans-Regular-subset.woff2') format('woff2'),
+       url('/fonts/FiraSans-Regular-subset.woff') format('woff'),
+       url('/fonts/FiraSans-Regular-subset.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/FiraSans-Medium-subset.woff2') format('woff2'),
+       url('/fonts/FiraSans-Medium-subset.woff') format('woff'),
+       url('/fonts/FiraSans-Medium-subset.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'FiraSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/FiraSans-SemiBold-subset.woff2') format('woff2'),
+       url('/fonts/FiraSans-SemiBold-subset.woff') format('woff'),
+       url('/fonts/FiraSans-SemiBold-subset.ttf') format('truetype');
+}

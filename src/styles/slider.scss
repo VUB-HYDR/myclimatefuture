@@ -1,0 +1,122 @@
+// Adapted from https://github.com/carbon-design-system/carbon/blob/ec433dc5a839cd4cb73cbebea81ad10f8aa7d4d2/packages/styles/scss/components/slider/_slider.scss
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  min-width: 200px;
+  max-width: 640px;
+  margin: 0 var(--spacing-1);
+}
+
+.slider__range-label {
+  white-space: nowrap;
+}
+
+.slider__track {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--tertiary-color);
+  cursor: pointer;
+  transform: translate(0%, -50%);
+}
+
+.slider__track:before {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  display: inline-block;
+  width: 2px;
+  height: 4px;
+  background: var(--tertiary-color);
+  content: '';
+  transform: translate(-50%, 0);
+}
+
+.slider__filled-track {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-accent);
+  pointer-events: none;
+  transform: translate(0%, -50%);
+  transform-origin: left;
+  transition: background var(--transition);
+}
+
+.slider__thumb {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1px transparent, inset 0 0 0 2px transparent;
+  cursor: pointer;
+  outline: none;
+  transform: translate(-50%, -50%);
+  transition: transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+
+  &:hover {
+    // 20px / 14px = 1.4286
+    transform: translate(-50%, -50%) scale(1.4286);
+  }
+
+  &:focus {
+    background-color: var(--color-accent);
+    box-shadow: inset 0 0 0 2px var(--color-accent), inset 0 0 0 3px var(--color-accent);
+    // 20px / 14px = 1.4286
+    transform: translate(-50%, -50%) scale(1.4286);
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 2px var(--color-accent);
+    transform: translate(-50%, -50%) scale(1.4286);
+  }
+}
+
+.slider__input {
+  display: none;
+}
+
+.slider-text-input {
+  width: auto;
+  height: 40px;
+  -moz-appearance: textfield;
+  text-align: center;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+}
+
+.slider-text-input.text-input--invalid {
+  padding-right: 1rem;
+}
+
+.slider__thumb:focus ~ .slider__filled-track {
+  background-color: var(--color-accent);
+}
+
+// Windows HCM fix
+/* stylelint-disable */
+// .slider__thumb {
+//   @include high-contrast-mode('outline');
+// }
+// .slider__thumb:focus {
+//   @include high-contrast-mode('focus');
+// }
+// .slider__track {
+//   @include high-contrast-mode('outline');
+// }
+/* stylelint-enable */
