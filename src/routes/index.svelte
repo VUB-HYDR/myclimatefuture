@@ -26,7 +26,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content={ PAGE_TITLE } />
   <meta property="og:description" content={ PAGE_DESCRIPTION } />
-  <meta property="og:image" content="/preview.png" />
+  <meta property="og:image" content={`${URL}/preview.png`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
   <meta property="og:image:alt" content={ PAGE_DESCRIPTION } />
@@ -34,7 +34,7 @@
 	<meta itemprop=name content={ PAGE_TITLE } />
 	<meta itemprop=description content={ PAGE_DESCRIPTION } />
 	<meta name=twitter:card content="summary_large_image" />
-	<meta name=twitter:image content="/preview.png" />
+	<meta name=twitter:image content={`${URL}/preview.png`} />
 	<meta name=twitter:title content={ PAGE_TITLE } />
 	<meta name=twitter:description content={ PAGE_DESCRIPTION } />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
