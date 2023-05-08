@@ -73,7 +73,7 @@ export const ASPECT_RATIOS = [
   [9, 16, "vertical"],
 ];
 export const RISKS_EMOJIES = ["🔥", "🌊", "🍂", "🌀", "🏜️", "☀️"];
-export const LAST_YEAR = 2021;
+export const LAST_YEAR = 2020;
 export const NUMBER_OF_YEARS = 60;
 export const DEFAULT_AGE = 18;
 export const DEFAULT_REGION = 0;
