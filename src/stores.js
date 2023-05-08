@@ -22,7 +22,10 @@ export const DATA = readable([], async (set) => {
 });
 
 export const CURRENT_YEAR = writable(LAST_YEAR - DEFAULT_AGE);
-export const CURRENT_AGE = derived(CURRENT_YEAR, ($year) => LAST_YEAR - $year);
+export const CURRENT_AGE = derived(
+  CURRENT_YEAR,
+  ($year) => new Date().getFullYear() - $year
+);
 export const CURRENT_REGION_INDEX = writable(DEFAULT_REGION);
 export const CURRENT_TEMPERATURE_INDEX = writable(DEFAULT_TEMPERATURE);
 
