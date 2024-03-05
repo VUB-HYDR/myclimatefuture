@@ -45,8 +45,8 @@
   });
 </script>
 
-<button type="button" class="download-btn" on:click={getGraphAsPNG} aria-label={$LL.BUTTON_DOWNLOAD_TITLE()} title={$LL.BUTTON_DOWNLOAD_TITLE()}>
-  <span class="label">{$LL.BUTTON_DOWNLOAD()}</span>
+<button type="button" class="download-btn" on:click={getGraphAsPNG} aria-label={$t('content.BUTTON_DOWNLOAD_TITLE')} title={$t('content.BUTTON_DOWNLOAD_TITLE')}>
+  <span class="label">{$t('content.BUTTON_DOWNLOAD')}</span>
   <Download />
 </button>
 

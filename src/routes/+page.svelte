@@ -1,11 +1,11 @@
 <script>
   import { PAGE_DESCRIPTION, PAGE_NAME, URL } from '$config';
   import { t, locale } from '$lib/translations';
-  // import About from '$lib/About.svelte';
+  import About from '$lib/About.svelte';
   // import AspectRatio from '$lib/AspectRatio/AspectRatio.svelte';
   // import DownloadButton from '$lib/DownloadButton/DownloadButton.svelte';
   import FAQ from '$lib/FAQ.svelte';
-  // import Footer from '$lib/Footer.svelte';
+  import Footer from '$lib/Footer.svelte';
   import Head from '$lib/Head.svelte';
   import Questions from '$lib/Questions.svelte';
   // import SocialButtons from '$lib/SocialButtons/SocialButtons.svelte';
@@ -55,9 +55,8 @@
 </div>
 
 <FAQ />
-
-<!--<About />-->
-<!--<Footer />-->
+<About />
+<Footer />
 
 <style lang="scss">
   @import '../styles/global.scss';

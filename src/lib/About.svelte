@@ -1,8 +1,8 @@
 <script>
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
 </script>
 
 <section class="column">
-  <h2><i aria-hidden="true">📄</i>{$LL.SECTION_STUDY()}</h2>
-  {@html $LL.STUDY_TEXT()}
+  <h2><i aria-hidden="true">📄</i>{$t('content.SECTION_STUDY')}</h2>
+  {@html $t('content.STUDY_TEXT')}
 </section>

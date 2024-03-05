@@ -64,11 +64,11 @@
 
 <div class="page-social-buttons">
   <ul>
-    <li><a href={tw} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_TWITTER()}><Twitter /></a></li>
-    <li><a href={fb} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_FACEBOOK()}><Facebook /></a></li>
-    <li><a href={tg} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_TELEGRAM()}><Telegram /></a></li>
-    <li><a href={wa} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_WHATSAPP()}><WhatsApp /></a></li>
-    <li><a href={mail} rel="noopener noreferrer" title={$LL.SHARE_MAIL()}><Mail /></a></li>
+    <li><a href={tw} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_TWITTER')}><Twitter /></a></li>
+    <li><a href={fb} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_FACEBOOK')}><Facebook /></a></li>
+    <li><a href={tg} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_TELEGRAM')}><Telegram /></a></li>
+    <li><a href={wa} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_WHATSAPP')}><WhatsApp /></a></li>
+    <li><a href={mail} rel="noopener noreferrer" title={$t('content.SHARE_MAIL')}><Mail /></a></li>
   </ul>
 </div>
 

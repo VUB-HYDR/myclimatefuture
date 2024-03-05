@@ -29,7 +29,7 @@
   });
 </script>
 
-<button type="button" aria-live="polite" id={ID_COPY} class="copy-btn" class:copy_success aria-label={$LL.BUTTON_COPY()} title={$LL.BUTTON_COPY()} {...$$restProps}>
+<button type="button" aria-live="polite" id={ID_COPY} class="copy-btn" class:copy_success aria-label={$t('content.BUTTON_COPY')} title={$t('content.BUTTON_COPY')} {...$$restProps}>
   <Copy />
 </button>
 
@@ -48,7 +48,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color var(--transition), color var(--transition);
+    transition:
+      background-color var(--transition),
+      color var(--transition);
 
     &:hover,
     &:focus {
@@ -63,7 +65,9 @@
       &::after {
         transform: scaleX(1.8) scaleY(1.8);
         opacity: 0;
-        transition: transform var(--transition), opacity var(--transition);
+        transition:
+          transform var(--transition),
+          opacity var(--transition);
       }
     }
 
@@ -78,7 +82,9 @@
       left: 0;
       z-index: -1;
       background-color: var(--color-accent-light);
-      transition: transform var(--transition), opacity var(--transition) 0.3s;
+      transition:
+        transform var(--transition),
+        opacity var(--transition) 0.3s;
     }
 
     @include query($narrow) {

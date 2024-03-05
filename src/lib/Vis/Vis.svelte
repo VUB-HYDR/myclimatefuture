@@ -74,13 +74,13 @@
   $: text = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_GRAPHIC_TEXT_REGION({ temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $LL.GRAPHIC_GRAPHIC_TEXT({ temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE });
 </script>
 
-<div class="page-graph" role="img" title={$LL.GRAPHIC_DESCRIPTION()} aria-label={$LL.GRAPHIC_DESCRIPTION()} aria-live="polite">
+<div class="page-graph" role="img" title={$t('content.GRAPHIC_DESCRIPTION')} aria-label={$t('content.GRAPHIC_DESCRIPTION')} aria-live="polite">
   <div class="page-graph-wrapper" bind:clientWidth={$CURRENT_VIS_WIDTH} style="height: {$CURRENT_VIS_HEIGHT}px" id={ID_GRAPH}>
     <div class="graph-text" class:compact={$CURRENT_ASPECT_RATIO_INDEX === 0 && $CURRENT_REGION_INDEX !== 0} class:high={$CURRENT_ASPECT_RATIO_INDEX === 2}>
       <p>{@html text}</p>
     </div>
     <div class="graph-footer">
-      <span>{$LL.GRAPHIC_LINK()}</span>
+      <span>{$t('content.GRAPHIC_LINK')}</span>
     </div>
     <svg viewBox={`0 0 ${$CURRENT_VIS_WIDTH} ${$CURRENT_VIS_HEIGHT}`} xmlns="http://www.w3.org/2000/svg">
       <g class="ticks">
@@ -126,7 +126,9 @@
           background-color: var(--pure-white);
           display: inline;
           margin: 0;
-          box-shadow: 7px 5px var(--pure-white), 0 5px var(--pure-white);
+          box-shadow:
+            7px 5px var(--pure-white),
+            0 5px var(--pure-white);
         }
       }
 

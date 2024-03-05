@@ -1,6 +1,6 @@
 <script>
   import { ADVISORY_BOARD } from '$config';
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
   import huberlin from './Logos/Huberlin-logo.svg';
   import imp from './Logos/IMP_ML_1CS_4CP_CLEAR SPACE.svg';
   import pik from './Logos/PIK_A_RGB.png';
@@ -10,10 +10,10 @@
 </script>
 
 <footer class="column">
-  <h2><i aria-hidden="true">👩‍🔬</i>{$LL.SECTION_BOARD()}</h2>
+  <h2><i aria-hidden="true">👩‍🔬</i>{$t('content.SECTION_BOARD')}</h2>
   <ul class="page-board">
     {#each ADVISORY_BOARD as [person, link, affiliation]}
-      <li><a href={link} target="_blank" rel="noopener noreferrer author">{person}</a>, {$LL[affiliation]()}</li>
+      <li><a href={link} target="_blank" rel="noopener noreferrer author">{person}</a>, {$t(`content.${affiliation}`)}</li>
     {/each}
   </ul>
   <div class="page-logos">
@@ -24,7 +24,7 @@
     <a href="https://www.pik-potsdam.de/en" target="_blank" rel="noopener noreferrer" title="Potsdam Institute for Climate Impact Research"><img src={pik} alt="Potsdam Institute for Climate Impact Research" /></a>
     <a href="https://www.savethechildren.org/" target="_blank" rel="noopener noreferrer" title="Save the Children"><img src={stc} alt="Save the Children" /></a>
   </div>
-  <p>{$LL.VUB_INTEREST()} <a href="https://www.vub.be/en/programmes" target="_blank" rel="noopener noreferrer">{$LL.VUB_INTEREST_LINK()}</a></p>
+  <p>{$t('content.VUB_INTEREST')} <a href="https://www.vub.be/en/programmes" target="_blank" rel="noopener noreferrer">{$t('content.VUB_INTEREST_LINK')}</a></p>
 </footer>
 
 <style lang="scss">
