@@ -16,7 +16,7 @@ export const VALUES = derived([CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPER
 
 export const CURRENT_TEMPERATURE = derived(CURRENT_TEMPERATURE_INDEX, ($index) => get(TEMPERATURES, $index));
 export const CURRENT_REGION = derived([CURRENT_REGION_INDEX, t], ([$index, $t]) => $t(`content.${KEYS_REGIONS[$index]}`));
-// export const CURRENT_REGION_SHORT = derived([CURRENT_REGION_INDEX, LL], ([$index, $LL]) => $LL[`${KEYS_REGIONS[$index]}_SHORT`]());
+export const CURRENT_REGION_SHORT = derived([CURRENT_REGION_INDEX, t], ([$index, $t]) => $t(`content.${KEYS_REGIONS[$index]}_SHORT`));
 // export const LABELS_RISKS = writable(RISKS_LABELS);
 export const LABELS_RISKS = derived(t, ($t) => RISKS_LABELS.map((key) => $t(`content.${key}`)));
 

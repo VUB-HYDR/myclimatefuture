@@ -1,6 +1,6 @@
 <script>
   import { HASHTAG, PAGE_TITLE, RISKS_EMOJIES, URL, URL_SIMPLE } from '$config';
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
   import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES } from '$store';
   import Facebook from '../Icons/Facebook.svelte';
   import Mail from '../Icons/Mail.svelte';
@@ -11,11 +11,11 @@
   $: params = { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE };
   $: params_short = { ...params, region: $CURRENT_REGION_SHORT };
   $: params_long = { ...params, region: $CURRENT_REGION };
-  $: text_start_short = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_TEXT_1_REGION_CLEAN(params_short) : $LL.GRAPHIC_TEXT_1_CLEAN(params);
-  $: text_start_long = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_TEXT_1_REGION_CLEAN(params_long) : $LL.GRAPHIC_TEXT_1_CLEAN(params);
-  $: text_and = $LL.GRAPHIC_TEXT_2();
-  $: text_end = $LL.GRAPHIC_TEXT_3();
-  $: text_url = $LL.GRAPHIC_TEXT_4();
+  $: text_start_short = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_short) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
+  $: text_start_long = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_long) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
+  $: text_and = $t('content.GRAPHIC_TEXT_2');
+  $: text_end = $t('content.GRAPHIC_TEXT_3');
+  $: text_url = $t('content.GRAPHIC_TEXT_4');
 
   function generateURL(text, emojis, long_url) {
     return `${text} ${emojis ? '👉' : ''} ${long_url ? URL : URL_SIMPLE}`;

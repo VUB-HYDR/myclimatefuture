@@ -8,7 +8,7 @@
   import Footer from '$lib/Footer.svelte';
   import Head from '$lib/Head.svelte';
   import Questions from '$lib/Questions.svelte';
-  // import SocialButtons from '$lib/SocialButtons/SocialButtons.svelte';
+  import SocialButtons from '$lib/SocialButtons/SocialButtons.svelte';
   import Text from '$lib/Text/Text.svelte';
   // import Vis from '$lib/Vis/Vis.svelte';
   //
@@ -47,7 +47,7 @@
   <Questions />
   <section class="output column">
     <Text />
-    <!--<SocialButtons />-->
+    <SocialButtons />
     <!--<Vis />-->
     <!--<AspectRatio />-->
     <!--<DownloadButton />-->
