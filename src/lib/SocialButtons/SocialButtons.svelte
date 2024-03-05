@@ -1,0 +1,92 @@
+<script>
+  import { HASHTAG, PAGE_TITLE, RISKS_EMOJIES, URL, URL_SIMPLE } from '$config';
+  import LL from '$i18n/i18n-svelte';
+  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES } from '$store';
+  import Facebook from '../Icons/Facebook.svelte';
+  import Mail from '../Icons/Mail.svelte';
+  import Telegram from '../Icons/Telegram.svelte';
+  import Twitter from '../Icons/Twitter.svelte';
+  import WhatsApp from '../Icons/WhatsApp.svelte';
+
+  $: params = { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE };
+  $: params_short = { ...params, region: $CURRENT_REGION_SHORT };
+  $: params_long = { ...params, region: $CURRENT_REGION };
+  $: text_start_short = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_TEXT_1_REGION_CLEAN(params_short) : $LL.GRAPHIC_TEXT_1_CLEAN(params);
+  $: text_start_long = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_TEXT_1_REGION_CLEAN(params_long) : $LL.GRAPHIC_TEXT_1_CLEAN(params);
+  $: text_and = $LL.GRAPHIC_TEXT_2();
+  $: text_end = $LL.GRAPHIC_TEXT_3();
+  $: text_url = $LL.GRAPHIC_TEXT_4();
+
+  function generateURL(text, emojis, long_url) {
+    return `${text} ${emojis ? '👉' : ''} ${long_url ? URL : URL_SIMPLE}`;
+  }
+
+  /**
+   * Generate a list of risks
+   * @param {string[]} labels - The title of the book.
+   * @param {number[]} values - Array
+   * @param {string} and - Text string for "and"
+   * @param {boolean} include_commas - Should the list include commas
+   * @param {boolean} include_emojis - Should the list include emojis
+   */
+  function generateList(labels, values, and, include_commas, include_emojis) {
+    let list = [];
+    labels.forEach((label, i) => {
+      let end = '';
+      if (include_commas) {
+        if (i < labels.length - 2) {
+          end = ',';
+        } else if (i === labels.length - 2) {
+          end = ` ${and}`;
+        }
+      }
+
+      list.push(`${include_emojis ? `${RISKS_EMOJIES[i]} ` : ''}${label.toLowerCase().replace('&shy;', '')} ${values[i]}×${end}`);
+    });
+    return list;
+  }
+
+  function generateText(start, list, end, url) {
+    return encodeURIComponent([start, ...list, end, `#${HASHTAG}`, url].filter(Boolean).join('\n'));
+  }
+
+  $: text_pure = generateText(text_start_long, generateList($LABELS_RISKS, $VALUES, text_and, true, false), text_end, generateURL(text_url, false, false));
+  $: text_default = generateText(text_start_long, generateList($LABELS_RISKS, $VALUES, text_and, true, true), text_end, generateURL(text_url, true, false));
+  $: text_short = generateText(text_start_short, generateList($LABELS_RISKS, $VALUES, text_and, false, true), text_end);
+  $: text_mail = generateText(text_start_long, generateList($LABELS_RISKS, $VALUES, text_and, true, true), text_end, generateURL(text_url, true, true));
+
+  $: fb = `https://www.facebook.com/sharer/sharer.php?u=${URL_SIMPLE}&quote=${text_pure}&hashtag=${HASHTAG}`;
+  $: tw = `https://twitter.com/intent/tweet?url=${URL_SIMPLE}&text=${text_short}`;
+  $: tg = `https://t.me/share/url?url=${URL}&text=${text_default}`;
+  $: wa = `https://api.whatsapp.com/send?text=${text_pure}`;
+  $: mail = `mailto:?subject=${PAGE_TITLE}&body=${text_mail}`;
+</script>
+
+<div class="page-social-buttons">
+  <ul>
+    <li><a href={tw} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_TWITTER()}><Twitter /></a></li>
+    <li><a href={fb} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_FACEBOOK()}><Facebook /></a></li>
+    <li><a href={tg} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_TELEGRAM()}><Telegram /></a></li>
+    <li><a href={wa} target="_blank" rel="noopener noreferrer" title={$LL.SHARE_WHATSAPP()}><WhatsApp /></a></li>
+    <li><a href={mail} rel="noopener noreferrer" title={$LL.SHARE_MAIL()}><Mail /></a></li>
+  </ul>
+</div>
+
+<style lang="scss">
+  @import '../../styles/global.scss';
+
+  .page-social-buttons {
+    padding: 0 calc(var(--spacing-1) * 1);
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      @include reset();
+    }
+
+    @include query($medium) {
+      grid-column: 2 / span 2;
+    }
+  }
+</style>
