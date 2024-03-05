@@ -1,8 +1,8 @@
 <script>
   import { ID_GRAPH } from '$config';
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
   import { CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, IMAGE_FILE_NAME } from '$store';
-  import { saveAs } from 'file-saver';
+  import saveAs from 'file-saver';
   import * as htmlToImage from 'html-to-image';
   import { onMount } from 'svelte';
   import Download from '../Icons/Download.svelte';

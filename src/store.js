@@ -23,9 +23,9 @@ export const LABELS_RISKS = derived(t, ($t) => RISKS_LABELS.map((key) => $t(`con
 export const CURRENT_ASPECT_RATIO_INDEX = writable(ASPECT_RATIOS[DEFAULT_ASPECT_RATIO]);
 export const CURRENT_ASPECT_RATIO = derived(CURRENT_ASPECT_RATIO_INDEX, ($index) => get(ASPECT_RATIOS, $index, [1, 1, '']));
 
-// export const IMAGE_FILE_NAME = derived([CURRENT_AGE, CURRENT_TEMPERATURE, CURRENT_REGION_SHORT, CURRENT_ASPECT_RATIO], ([$age, $temperature, $region, $ratio]) => {
-//   return snakeCase(`${DOWNLOAD_IMAGE_PREFIX}-${$age}-${$temperature}-${$region}-${$ratio[2]}`) + '.png';
-// });
+export const IMAGE_FILE_NAME = derived([CURRENT_AGE, CURRENT_TEMPERATURE, CURRENT_REGION_SHORT, CURRENT_ASPECT_RATIO], ([$age, $temperature, $region, $ratio]) => {
+  return snakeCase(`${DOWNLOAD_IMAGE_PREFIX}-${$age}-${$temperature}-${$region}-${$ratio[2]}`) + '.png';
+});
 
 export const CURRENT_VIS_WIDTH = writable(100);
 export const CURRENT_VIS_HEIGHT = derived([CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO], ([$width, [$ratio_width, $ratio_height]]) => {

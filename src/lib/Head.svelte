@@ -1,19 +1,16 @@
 <script>
   import { HASHTAG } from '$config';
   import { t, locales, locale } from '$lib/translations';
+  import LocaleSwitcher from '$lib/LocaleSwitcher.svelte';
   // import LocaleSwitcher from './i18n/LocaleSwitcher.svelte';
 </script>
 
 <header class="page-header grid-half column">
   <span class="topic">#{HASHTAG}</span>
-  <h1 class="page-title">{$t('content.HEADLINE')}</h1>
+  <h1 class="page-title text-4xl md:text-5xl lg:text-6xl font-bold hyphens-auto lg:hyphens-none">{$t('content.HEADLINE')}</h1>
   <div class="intro">{@html $t('content.INTRODUCTION')}</div>
   <div class="locale-switcher">
-    <select bind:value={$locale}>
-      {#each $locales as value}
-        <option {value}>{$t(`lang.${value}`)}</option>
-      {/each}
-    </select>
+    <LocaleSwitcher />
   </div>
   <div class="center"><span role="alert" class="info">{$t('content.DATA_STORE_MESSAGE')}</span></div>
 </header>

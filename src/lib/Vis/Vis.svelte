@@ -1,6 +1,6 @@
 <script>
   import { ID_GRAPH, RISKS_LABELS } from '$config';
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
   import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, LABELS_RISKS, VALUES } from '$store';
   import { splitIntoEvenChunks } from '$utils';
   import { scaleBand, scaleLinear } from 'd3-scale';
@@ -71,7 +71,7 @@
     };
   });
 
-  $: text = $CURRENT_REGION_INDEX > 0 ? $LL.GRAPHIC_GRAPHIC_TEXT_REGION({ temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $LL.GRAPHIC_GRAPHIC_TEXT({ temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE });
+  $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_GRAPHIC_TEXT_REGION', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_GRAPHIC_TEXT', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE });
 </script>
 
 <div class="page-graph" role="img" title={$t('content.GRAPHIC_DESCRIPTION')} aria-label={$t('content.GRAPHIC_DESCRIPTION')} aria-live="polite">
