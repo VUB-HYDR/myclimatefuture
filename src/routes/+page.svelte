@@ -4,7 +4,7 @@
   // import About from '$lib/About.svelte';
   // import AspectRatio from '$lib/AspectRatio/AspectRatio.svelte';
   // import DownloadButton from '$lib/DownloadButton/DownloadButton.svelte';
-  // import FAQ from '$lib/FAQ.svelte';
+  import FAQ from '$lib/FAQ.svelte';
   // import Footer from '$lib/Footer.svelte';
   import Head from '$lib/Head.svelte';
   import Questions from '$lib/Questions.svelte';
@@ -54,7 +54,8 @@
   </section>
 </div>
 
-<!--<FAQ />-->
+<FAQ />
+
 <!--<About />-->
 <!--<Footer />-->
 
