@@ -4,7 +4,7 @@
   "INTRODUCTION": "<p>Qui puoi scoprire quanti eventi estremi climatici dovrai affrontare in più nel corso della tua vita rispetto a un mondo senza cambiamenti climatici. I risultati si basano su <a href='https://www.science.org/doi/10.1126/science.abi7339'>ricerche scientifiche solide</a>.</p>",
   "DATA_STORE_MESSAGE": "Non memorizziamo i tuoi dati.",
   "QUESTION_AGE": "Quando sei nato?",
-  "QUESTION_AGE_TOOLTIP": "Nati nel {year}",
+  "QUESTION_AGE_TOOLTIP": "Nati nel {{year}}",
   "QUESTION_SCENARIO": "Seleziona lo scenario di riscaldamento",
   "SCENARIO_15": "1.5°C",
   "SCENARIO_15_DESCRIPTION": "La massima ambizione dell'accordo di Parigi",

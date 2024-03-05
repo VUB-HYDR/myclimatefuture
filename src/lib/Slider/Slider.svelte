@@ -1,5 +1,6 @@
 <script>
-  import LL from '$i18n/i18n-svelte';
+  // import LL from '$i18n/i18n-svelte';
+  import { t, locale } from '$lib/translations';
   import tooltip from '../tooltip.js';
   // Adapted from https://github.com/carbon-design-system/carbon-components-svelte/blob/master/src/Slider/Slider.svelte
   /** Specify the value of the slider */
@@ -110,7 +111,8 @@
     }
   }
 
-  $: tooltipContent = $LL.QUESTION_AGE_TOOLTIP({ year: parseInt(value) });
+  // $: tooltipContent = $LL.QUESTION_AGE_TOOLTIP({ year: parseInt(value) });
+  $: tooltipContent = $t('content.QUESTION_AGE_TOOLTIP', { year: parseInt(value) });
 </script>
 
 <svelte:window on:mousemove={move} on:touchmove={move} on:mouseup={stopHolding} on:touchend={stopHolding} on:touchcancel={stopHolding} />

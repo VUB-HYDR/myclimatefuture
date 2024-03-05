@@ -4,7 +4,7 @@
   "INTRODUCTION": "<p>Ici, vous pouvez découvrir combien d’evenements extrêmes climatiques en plus vous vivrez au cours de votre vie par rapport à un monde sans changement climatique. Les résultats sont fondés sur <a href='https://www.science.org/doi/10.1126/science.abi7339'>des données scientifiques solides</a></p>",
   "DATA_STORE_MESSAGE": "Nous ne gardons pas vos données.",
   "QUESTION_AGE": "Quand êtes-vous né(e)?",
-  "QUESTION_AGE_TOOLTIP": "Né(e) en {year}",
+  "QUESTION_AGE_TOOLTIP": "Né(e) en {{year}}",
   "QUESTION_SCENARIO": "Sélectionnez le scénario de réchauffement",
   "SCENARIO_15": "1,5°C",
   "SCENARIO_15_DESCRIPTION": "L’ambition de l'Accord de Paris",

@@ -4,7 +4,7 @@
   "INTRODUCTION": "<p>Hier kun je ontdekken hoeveel meer klimaatextremen je tijdens je leven zult meemaken in vergelijking met een wereld zonder klimaatverandering. De resultaten zijn gebaseerd op <a href='https://www.science.org/doi/10.1126/science.abi7339'>betrouwbare wetenschap</a>.</p>",
   "DATA_STORE_MESSAGE": "We slaan uw gegevens niet op.",
   "QUESTION_AGE": "Wanneer ben je geboren?",
-  "QUESTION_AGE_TOOLTIP": "Geboren in {year}",
+  "QUESTION_AGE_TOOLTIP": "Geboren in {{year}}",
   "QUESTION_SCENARIO": "Selecteer het opwarmingsscenario",
   "SCENARIO_15": "1,5°C",
   "SCENARIO_15_DESCRIPTION": "De hoogste ambitie van het Parijsakkoord",

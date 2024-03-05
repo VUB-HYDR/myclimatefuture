@@ -4,7 +4,7 @@
   "INTRODUCTION": "<p>Here you can find out how many more climate extremes you will face across your lifetime relative to a world without climate change. The results are based on <a href='https://www.science.org/doi/10.1126/science.abi7339'>solid science</a>.</p>",
   "DATA_STORE_MESSAGE": "We don’t store your data.",
   "QUESTION_AGE": "When were you born?",
-  "QUESTION_AGE_TOOLTIP": "Born in {year:number}",
+  "QUESTION_AGE_TOOLTIP": "Born in {{year}}",
   "QUESTION_SCENARIO": "Select the warming scenario",
   "SCENARIO_15": "1.5°C",
   "SCENARIO_15_DESCRIPTION": "The Paris Agreement’s highest ambition",
