@@ -1,7 +1,7 @@
 <script>
   // Adapted from https://github.com/carbon-design-system/carbon-components-svelte/blob/master/src/CopyButton/CopyButton.svelte
   import { ID_COPY, ID_TEXT } from '$config';
-  import LL from '$i18n/i18n-svelte';
+  import { t } from '$lib/translations';
   import ClipboardJS from 'clipboard';
   import { onMount } from 'svelte';
   import tippy from 'tippy.js';

@@ -9,7 +9,7 @@
   import Head from '$lib/Head.svelte';
   import Questions from '$lib/Questions.svelte';
   // import SocialButtons from '$lib/SocialButtons/SocialButtons.svelte';
-  // import Text from '$lib/Text/Text.svelte';
+  import Text from '$lib/Text/Text.svelte';
   // import Vis from '$lib/Vis/Vis.svelte';
   //
   $: title = $t('content.HEADLINE');
@@ -46,7 +46,7 @@
 <div class="generator">
   <Questions />
   <section class="output column">
-    <!--<Text />-->
+    <Text />
     <!--<SocialButtons />-->
     <!--<Vis />-->
     <!--<AspectRatio />-->

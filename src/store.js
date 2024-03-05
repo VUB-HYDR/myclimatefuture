@@ -1,5 +1,6 @@
 import { ASPECT_RATIOS, DEFAULT_AGE, DEFAULT_ASPECT_RATIO, DEFAULT_REGION, DEFAULT_TEMPERATURE, DOWNLOAD_IMAGE_PREFIX, KEYS_REGIONS, LAST_YEAR, RISKS, RISKS_LABELS, TEMPERATURES } from '$config';
 import data from '$lib/data/data.json';
+import { t } from '$lib/translations';
 import { getValue } from '$utils';
 import { get, snakeCase } from 'lodash-es';
 import { derived, writable } from 'svelte/store';
@@ -14,10 +15,10 @@ export const VALUES = derived([CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPER
 });
 
 export const CURRENT_TEMPERATURE = derived(CURRENT_TEMPERATURE_INDEX, ($index) => get(TEMPERATURES, $index));
-// export const CURRENT_REGION = derived([CURRENT_REGION_INDEX, LL], ([$index, $LL]) => $LL[KEYS_REGIONS[$index]]());
+export const CURRENT_REGION = derived([CURRENT_REGION_INDEX, t], ([$index, $t]) => $t(`content.${KEYS_REGIONS[$index]}`));
 // export const CURRENT_REGION_SHORT = derived([CURRENT_REGION_INDEX, LL], ([$index, $LL]) => $LL[`${KEYS_REGIONS[$index]}_SHORT`]());
-// // export const LABELS_RISKS = writable(RISKS_LABELS);
-// export const LABELS_RISKS = derived(LL, ($LL) => RISKS_LABELS.map((key) => $LL[key]()));
+// export const LABELS_RISKS = writable(RISKS_LABELS);
+export const LABELS_RISKS = derived(t, ($t) => RISKS_LABELS.map((key) => $t(`content.${key}`)));
 
 export const CURRENT_ASPECT_RATIO_INDEX = writable(ASPECT_RATIOS[DEFAULT_ASPECT_RATIO]);
 export const CURRENT_ASPECT_RATIO = derived(CURRENT_ASPECT_RATIO_INDEX, ($index) => get(ASPECT_RATIOS, $index, [1, 1, '']));

@@ -84,13 +84,13 @@
   "TYPE_TROPICAL_CYCLONES": "tropical cyclones",
   "TYPE_DROUGHTS": "droughts",
   "TYPE_HEATWAVES": "heatwaves",
-  "GRAPHIC_TEXT_1": "In a <strong>{temp}</strong> world, I, as {age|{8:an,11:an,18:an,*:a}} <strong>{age}-year-old</strong>, will experience",
-  "GRAPHIC_TEXT_1_REGION": "In a <strong>{temp}</strong> world, I, as {age|{8:an,11:an,18:an,*:a}} <strong>{age}-year-old</strong> from <strong>{region}</strong>, will experience",
-  "GRAPHIC_TEXT_1_CLEAN": "In a {temp} world, I, as {age|{8:an,11:an,18:an,*:a}} {age}-year-old, will experience",
-  "GRAPHIC_TEXT_1_REGION_CLEAN": "In a {temp} world, I, as {age|{8:an,11:an,18:an,*:a}} {age}-year-old from {region}, will experience",
+  "GRAPHIC_TEXT_1": "In a <strong>{{temp}}</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong>, will experience",
+  "GRAPHIC_TEXT_1_REGION": "In a <strong>{{temp}}</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong> from <strong>{{region}}</strong>, will experience",
+  "GRAPHIC_TEXT_1_CLEAN": "In a {{temp}} world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} {{age}}-year-old, will experience",
+  "GRAPHIC_TEXT_1_REGION_CLEAN": "In a {{temp}} world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} {{age}}-year-old from {{region}}, will experience",
   "GRAPHIC_TEXT_2": "and",
   "GRAPHIC_TEXT_3": "more than without climate change.",
   "GRAPHIC_TEXT_4": "Do the test",
-  "GRAPHIC_GRAPHIC_TEXT": "In a <strong>{temp}</strong> world, I, as {age|{8:an,11:an,18:an,*:a}} <strong>{age}-year-old</strong>, will experience these increases",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": "In a <strong>{temp}</strong> world, I, as {age|{8:an,11:an,18:an,*:a}} <strong>{age}-year-old</strong> from <strong>{region}</strong>, will experience these increases"
+  "GRAPHIC_GRAPHIC_TEXT": "In a <strong>{{temp}}</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong>, will experience these increases",
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "In a <strong>{{temp}}</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong> from <strong>{{region}}</strong>, will experience these increases"
 }
