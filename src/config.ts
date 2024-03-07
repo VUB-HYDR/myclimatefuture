@@ -24,9 +24,9 @@ export const REGIONS_COUNTRIES = [
 export const RISKS = ['burntarea', 'floodedarea', 'cropfailedarea', 'tropicalcyclonedarea', 'driedarea', 'heatwavedarea'];
 export const RISKS_LABELS = ['TYPE_WILDFIRE', 'TYPE_RIVER_FLOODS', 'TYPE_CROP_FAILURES', 'TYPE_TROPICAL_CYCLONES', 'TYPE_DROUGHTS', 'TYPE_HEATWAVES'];
 export const ASPECT_RATIOS = [
-  [16, 9, 'horizontal'],
-  [1, 1, 'square'],
-  [9, 16, 'vertical'],
+  [16, 9, 'horizontal', 'h-3.5 aspect-[16/9]'],
+  [1, 1, 'square', 'w-4 aspect-[1/1]'],
+  [9, 16, 'vertical', 'w-3.5 aspect-[9/16]'],
 ];
 export const RISKS_EMOJIES = ['🔥', '🌊', '🍂', '🌀', '🏜️', '☀️'];
 export const LAST_YEAR = 2020;

@@ -59,7 +59,6 @@ h2 {
   font-size: var(--size-4);
 
   i {
-    @include text-reset();
     margin-right: calc(var(--spacing-1) / 2);
 
     @include query(calc(#{$max-width-column} + 6rem)) {
@@ -119,15 +118,6 @@ label h2 {
 
 .graph-footer span {
   font-size: var(--size-6);
-}
-
-.accordion__title {
-  font-size: var(--size-5);
-  font-weight: var(--weight-medium);
-}
-
-.accordion__content {
-  font-size: var(--size-5);
 }
 
 .button_title {
@@ -258,5 +248,4 @@ strong {
 }
 
 @import './tile';
-@import './accordion';
 @import './slider';

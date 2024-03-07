@@ -6,6 +6,7 @@
   import RadioButton from './ButtonGroup/RadioButton.svelte';
   import Info from './Icons/Info.svelte';
   import Slider from './Slider/Slider.svelte';
+  import H2 from '$lib/ui/H2.svelte';
 
   import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, REGIONS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
   import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR } from '$store';
@@ -42,10 +43,10 @@
 
 <section class="input column">
   <Slider bind:value={$CURRENT_YEAR} min={LAST_YEAR - NUMBER_OF_YEARS} max={LAST_YEAR} step={1} currentAge={age}>
-    <h2 slot="labelText"><i>{ageEmoji}</i> {$t(`content.QUESTION_AGE`)}</h2>
+    <H2 emoji={ageEmoji} slot="labelText">{$t('content.QUESTION_AGE')}</H2>
   </Slider>
   <ButtonGroup bind:selected={$CURRENT_TEMPERATURE_INDEX}>
-    <h2 slot="legend"><i>🌡️</i> {$t(`content.QUESTION_SCENARIO`)}</h2>
+    <H2 emoji="🌡️" slot="legend">{$t('content.QUESTION_SCENARIO')}</H2>
     <div class="grid-third" slot="options">
       {#each listTemperatures as { value, checked, label, details, title, name }}
         <RadioButton {value} {checked} buttonDescription={title} {name}>
@@ -56,7 +57,7 @@
     </div>
   </ButtonGroup>
   <ButtonGroup legend="Where are you from?" bind:selected={$CURRENT_REGION_INDEX}>
-    <h2 slot="legend"><i>🗺️</i> {$t(`content.QUESTION_LOCATION`)}</h2>
+    <H2 emoji="🗺️" slot="legend">{$t('content.QUESTION_LOCATION')}</H2>
     <div class="grid-third" slot="options">
       {#each listRegions as { value, checked, region, countries, title, name }}
         <RadioButton {value} {checked} buttonDescription={title} {name}>

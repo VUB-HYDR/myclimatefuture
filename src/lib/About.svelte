@@ -1,8 +1,9 @@
 <script>
   import { t } from '$lib/translations';
+  import H2 from '$lib/ui/H2.svelte';
 </script>
 
 <section class="column">
-  <h2><i aria-hidden="true">📄</i>{$t('content.SECTION_STUDY')}</h2>
+  <H2 emoji="📄">{$t('content.SECTION_STUDY')}</H2>
   {@html $t('content.STUDY_TEXT')}
 </section>

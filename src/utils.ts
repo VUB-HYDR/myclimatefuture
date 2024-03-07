@@ -5,7 +5,7 @@ export function getValue(data, region: number, risk: number, temperature: number
   return get(data, [region, risk, temperature, age], 0);
 }
 
-export function getAgeEmoji(age: number) {
+export function getAgeEmoji(age: number): string {
   return EMOJI_AGES.find(([a]) => a > age)[1];
 }
 

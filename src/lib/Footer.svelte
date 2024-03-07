@@ -7,10 +7,11 @@
   import stc from './Logos/STC_Logo.svg';
   import ca from './Logos/ca_logo.svg';
   import vub from './Logos/vub_logo.svg';
+  import H2 from '$lib/ui/H2.svelte';
 </script>
 
 <footer class="column">
-  <h2><i aria-hidden="true">👩‍🔬</i>{$t('content.SECTION_BOARD')}</h2>
+  <H2 emoji="👩‍🔬">{$t('content.SECTION_BOARD')}</H2>
   <ul class="page-board">
     {#each ADVISORY_BOARD as [person, link, affiliation]}
       <li><a href={link} target="_blank" rel="noopener noreferrer author">{person}</a>, {$t(`content.${affiliation}`)}</li>
