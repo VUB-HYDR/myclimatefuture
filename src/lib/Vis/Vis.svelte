@@ -1,7 +1,7 @@
 <script>
   import { ID_GRAPH, RISKS_LABELS } from '$config';
   import { t } from '$lib/translations';
-  import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, LABELS_RISKS, VALUES } from '$store';
+  import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, LABELS_RISKS, VALUES } from '$store';
   import { splitIntoEvenChunks } from '$utils';
   import { scaleBand, scaleLinear } from 'd3-scale';
   import { capitalize } from 'lodash-es';
@@ -23,10 +23,13 @@
 
   let max;
 
-  VALUES.subscribe((value) => {
-    max = Math.max(...value);
-    progress.set(value.map((d) => (1 / max) * d));
+  VALUES.subscribe((values) => {
+    const numbers = values.map(([num]) => num);
+    max = Math.max(...numbers);
+    progress.set(numbers.map((d) => (1 / max) * d));
   });
+
+  $: console.log({ max });
 
   $: base = $CURRENT_VIS_HEIGHT - padding.bottom;
 
@@ -48,11 +51,15 @@
 
   $: bars = $LABELS_RISKS.map((label, index) => {
     const size = y($progress[index] || 0);
-    const value = $VALUES[index];
+    const value = $VALUES[index][0];
+
+    const str = $VALUES[index][1];
+    // console.log({ value, str });
     const x1 = x(index) || 0;
     return {
       labels: splitIntoEvenChunks(capitalize(label), 2),
       value,
+      str,
       x: x1,
       cx: x1 + barWidth / 2,
       y: size || 0,
@@ -71,7 +78,7 @@
     };
   });
 
-  $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_GRAPHIC_TEXT_REGION', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_GRAPHIC_TEXT', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE });
+  $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_GRAPHIC_TEXT_REGION', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_GRAPHIC_TEXT', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE });
 </script>
 
 <div class="page-graph" role="img" title={$t('content.GRAPHIC_DESCRIPTION')} aria-label={$t('content.GRAPHIC_DESCRIPTION')} aria-live="polite">
@@ -90,10 +97,10 @@
       </g>
       {#if xs[0] && xs[1]}
         <g>
-          {#each bars as { labels, value, x, height, y, cx }}
+          {#each bars as { labels, str, value, x, height, y, cx }}
             <g class="bar">
               <rect {x} {y} {height} width={barWidth} />
-              <text x={cx} y={y - 10} text-anchor="middle" class="values">{value}&times;</text>
+              <text x={cx} y={y - 10} text-anchor="middle" class="values" title={value}>{str}&times;</text>
               <text x={cx} y={base + 15} text-anchor="middle" class="labels">
                 {#each labels as label, i}
                   <tspan x={cx} dy={i > 0 ? ($CURRENT_VIS_WIDTH <= 600 ? 14 : 15) : 0}>{label}</tspan>

@@ -1,8 +1,7 @@
 <script>
   import { t } from '$lib/translations';
   import { HASHTAG, ID_TEXT, RISKS_EMOJIES, URL, URL_SIMPLE, RISKS_LABELS } from '$config';
-  // import LL from '$i18n/i18n-svelte';
-  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES } from '$store';
+  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, VALUES, CURRENT_TEMPERATURE_STRING } from '$store';
   import CopyButton from '../CopyButton/CopyButton.svelte';
 
   $: l = RISKS_LABELS.length - 2;
@@ -11,7 +10,7 @@
     return {
       emoji: RISKS_EMOJIES[i],
       label: $t(`content.${key}`).toLowerCase(),
-      value: $VALUES[i] ?? 0,
+      value: $VALUES[i][1] ?? 0,
       comma: i < l ? ',' : '',
       and: i === l ? ` ${and}` : '',
     };
@@ -19,7 +18,7 @@
 
   $: and = $t('content.GRAPHIC_TEXT_2');
 
-  $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_TEXT_1', { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE });
+  $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_TEXT_1', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE });
 </script>
 
 <div class="page-text">

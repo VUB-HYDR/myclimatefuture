@@ -41,7 +41,7 @@
         }
       }
 
-      list.push(`${include_emojis ? `${RISKS_EMOJIES[i]} ` : ''}${label.toLowerCase().replace('&shy;', '')} ${values[i]}×${end}`);
+      list.push(`${include_emojis ? `${RISKS_EMOJIES[i]} ` : ''}${label.toLowerCase().replace('&shy;', '')} ${values[i][1]}×${end}`);
     });
     return list;
   }
