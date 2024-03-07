@@ -16,6 +16,12 @@ export default {
           border: '#f5c82f',
           background: '#f9f0c5',
         },
+        primary: {
+          DEFAULT: '#3d405b',
+          light: 'rgba(61, 64, 91, 0.2)',
+        },
+        secondary: '#798094',
+        tertiary: '#e0e0e0',
       },
     },
   },

@@ -138,8 +138,7 @@
         left: 5px;
 
         span {
-          margin: 0;
-          color: var(--secondary-color);
+          @apply text-xs m-0 text-secondary;
         }
       }
     }

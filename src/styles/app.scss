@@ -2,56 +2,18 @@
 @import './global';
 @import './fonts';
 
-html {
-  font-size: 93.8%;
-} /*15px*/
-
 body {
   min-height: 100vh;
   color: var(--primary-color);
   margin-bottom: var(--size-vertical-inner-gap);
 }
 
-#svelte {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .wrapper {
-  max-width: $max-width-page;
-  padding: 0 calc(var(--spacing-1) / 2);
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-
-  @include query($narrow) {
-    padding: 0 var(--spacing-1);
-  }
-
-  @include query($medium) {
-    padding: 0 calc(var(--spacing-1) * 2);
-  }
+  @apply max-w-6xl mx-auto w-full box-border p-0 px-2 sm:px-4 md:px-8;
 }
 
-input,
-button {
-  font-size: inherit;
-  font-family: inherit;
-}
-
-button:focus:not(:focus-visible) {
-  outline: none;
-}
-
-h1 {
-  font-size: var(--size-1);
-  hyphens: auto;
-
-  @include query($medium) {
-    font-size: var(--size-0);
-    hyphens: none;
-  }
+em {
+  @apply not-italic;
 }
 
 h2 {
@@ -116,10 +78,6 @@ label h2 {
   }
 }
 
-.graph-footer span {
-  font-size: var(--size-6);
-}
-
 .button_title {
   font-size: var(--size-4);
 
@@ -158,20 +116,13 @@ p {
 }
 
 a {
-  color: var(--color-accent);
-  transition: color var(--transition);
-
-  &.quiete {
-    color: var(--primary-color);
-  }
-
-  &.active {
-    color: var(--primary-color);
-  }
+  @apply text-accent transition-colors;
 
   &:hover,
-  &:focus {
-    color: var(--primary-color);
+  &:focus,
+  &.active,
+  &.quiete {
+    @apply text-primary;
   }
 }
 
@@ -179,7 +130,6 @@ strong,
 em,
 .button_title,
 .button_title--small {
-  @include text-reset();
   font-weight: var(--weight-bold);
 }
 
@@ -191,34 +141,11 @@ strong {
 .grid-half {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: var(--size-horizontal-inner-gap);
+  grid-column-gap: var(--size-vertical-outer-gap);
 }
 
 .grid-third {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: var(--size-horizontal-inner-gap);
-  grid-row-gap: calc(var(--size-vertical-inner-gap) / 2);
-
-  @include query($narrow) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: calc(var(--size-vertical-inner-gap) / 2);
-    grid-row-gap: calc(var(--size-vertical-inner-gap) / 2);
-  }
-
-  @include query($medium) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: var(--size-vertical-inner-gap);
-  }
-}
-
-.grid-third--fixed {
-  width: 100%;
-  display: grid;
-  grid-column-gap: var(--size-horizontal-inner-gap);
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: var(--size-vertical-inner-gap);
+  @apply w-full grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 md:grid-cols-3 md:gap-y-8;
 }
 
 .download-btn {
@@ -248,4 +175,3 @@ strong {
 }
 
 @import './tile';
-@import './slider';

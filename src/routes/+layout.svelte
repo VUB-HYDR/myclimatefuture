@@ -7,10 +7,7 @@
   import '../app.css';
 
   // This is used to change the color sheme of the website depending on the selected warming level
-  let temperature_index: string;
-  CURRENT_TEMPERATURE_INDEX.subscribe((value: number): void => {
-    temperature_index = `level-${value}`;
-  });
+  $: temperatureClass = `level-${$CURRENT_TEMPERATURE_INDEX}`;
 
   /** @type { import('./$types').LayoutData } */
   export let data;
@@ -18,7 +15,7 @@
 
 <Header />
 
-<main class={`wrapper ${temperature_index}`} style="--color-accent: var(--color-accent-{$CURRENT_TEMPERATURE_INDEX})">
+<main class="wrapper {temperatureClass}" style="--color-accent: var(--color-accent-{$CURRENT_TEMPERATURE_INDEX})">
   <slot />
 </main>
 

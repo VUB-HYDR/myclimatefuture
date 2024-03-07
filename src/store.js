@@ -5,13 +5,14 @@ import { getValue } from '$utils';
 import { get, snakeCase } from 'lodash-es';
 import { derived, writable } from 'svelte/store';
 
-export const CURRENT_YEAR = writable(LAST_YEAR - DEFAULT_AGE);
+export const CURRENT_YEAR_SLIDER = writable([LAST_YEAR - DEFAULT_AGE]);
+export const CURRENT_YEAR = derived(CURRENT_YEAR_SLIDER, ($years) => $years[0]);
 export const CURRENT_AGE = derived(CURRENT_YEAR, ($year) => new Date().getFullYear() - $year);
 export const CURRENT_REGION_INDEX = writable(DEFAULT_REGION);
 export const CURRENT_TEMPERATURE_INDEX = writable(DEFAULT_TEMPERATURE);
 
 export const VALUES = derived([CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX], ([$age, $region, $temperature]) => {
-  return RISKS.map((r, n) => getValue(data, $region, n, $temperature, $age));
+  return RISKS.map((r, n) => getValue(data, $region, n, $temperature, $age) ?? 0);
 });
 
 export const CURRENT_TEMPERATURE = derived(CURRENT_TEMPERATURE_INDEX, ($index) => get(TEMPERATURES, $index));

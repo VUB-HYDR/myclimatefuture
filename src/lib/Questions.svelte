@@ -6,10 +6,11 @@
   import RadioButton from './ButtonGroup/RadioButton.svelte';
   import Info from './Icons/Info.svelte';
   import Slider from './Slider/Slider.svelte';
+  import Slide from './Slider/Slide.svelte';
   import H2 from '$lib/ui/H2.svelte';
 
   import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, REGIONS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
-  import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR } from '$store';
+  import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR_SLIDER } from '$store';
 
   let age;
   CURRENT_AGE.subscribe((value) => {
@@ -42,9 +43,10 @@
 </script>
 
 <section class="input column">
-  <Slider bind:value={$CURRENT_YEAR} min={LAST_YEAR - NUMBER_OF_YEARS} max={LAST_YEAR} step={1} currentAge={age}>
+  <div>
     <H2 emoji={ageEmoji} slot="labelText">{$t('content.QUESTION_AGE')}</H2>
-  </Slider>
+    <Slide value={CURRENT_YEAR_SLIDER} min={LAST_YEAR - NUMBER_OF_YEARS} max={LAST_YEAR} />
+  </div>
   <ButtonGroup bind:selected={$CURRENT_TEMPERATURE_INDEX}>
     <H2 emoji="🌡️" slot="legend">{$t('content.QUESTION_SCENARIO')}</H2>
     <div class="grid-third" slot="options">

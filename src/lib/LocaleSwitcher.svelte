@@ -36,25 +36,20 @@
 
 <div class="flex flex-col gap-1">
   <!-- svelte-ignore a11y-label-has-associated-control - $label contains the 'for' attribute -->
-  <label class="block text-red-900" use:melt={$label}>Language:</label>
-  <button
-    class="flex h-10 min-w-[220px] items-center justify-between rounded-lg bg-gray-50 px-3 py-2
-  text-red-700 shadow transition-opacity hover:opacity-90"
-    use:melt={$trigger}
-    aria-label="Food"
-  >
+  <label class="block text-gray-400 text-xs" use:melt={$label}>Language:</label>
+  <button class="flex h-10 min-w-[220px] items-center border-gray-300 hover:border-gray-800 focus:border-gray-800 border rounded-md justify-between px-3 py-2 text-red-700 transition-colors" use:melt={$trigger} aria-label="Food">
     {$selectedLabel || 'Select a flavor'}
     <Chevron class="size-5" />
   </button>
   {#if $open}
-    <div class=" z-10 flex max-h-[300px] flex-col overflow-y-auto rounded-lg bg-gray-50 p-1 shadow focus:!ring-0" use:melt={$menu} transition:fade={{ duration: 150 }}>
+    <div class=" z-10 flex max-h-[300px] flex-col overflow-y-auto rounded-lg bg-white p-1 border border-accent focus:!ring-0" use:melt={$menu} transition:fade={{ duration: 150 }}>
       {#each $locales as value}
-        <div class="relative cursor-pointer rounded-lg py-1 pl-8 pr-4 text-neutral-800 hover:bg-red-100 focus:z-10 focus:text-red-700 data-[highlighted]:bg-red-200 data-[highlighted]:text-red-900 data-[disabled]:opacity-50" use:melt={$option({ value: value, label: $t(`lang.${value}`) })}>
+        <div class="relative cursor-pointer rounded-lg py-1 pl-8 pr-4 text-neutral-800 hover:bg-accent focus:z-10 focus:text-accent data-[highlighted]:bg-accent-light data-[highlighted]:text-accent data-[disabled]:opacity-50" use:melt={$option({ value: value, label: $t(`lang.${value}`) })}>
           <div class="check {$isSelected(value) ? 'block' : 'hidden'}">
             <Check class="size-4" />
           </div>
 
-          {$t(`lang.${value}`)}
+          <span class="ml-2">{$t(`lang.${value}`)}</span>
         </div>
       {/each}
     </div>

@@ -6,10 +6,10 @@
 </script>
 
 <header class="page-header grid-half column">
-  <span class="topic">#{HASHTAG}</span>
-  <h1 class="page-title text-4xl md:text-5xl lg:text-6xl font-bold hyphens-auto lg:hyphens-none">{$t('content.HEADLINE')}</h1>
-  <div class="intro">{@html $t('content.INTRODUCTION')}</div>
-  <div class="locale-switcher">
+  <span class="text-xs text-accent">#{HASHTAG}</span>
+  <h1 class="col-span-2 col-start-1 mb-4 text-4xl md:text-5xl lg:text-6xl font-bold hyphens-auto lg:hyphens-none">{$t('content.HEADLINE')}</h1>
+  <div class="col-span-2 col-start-1 md:col-span-1">{@html $t('content.INTRODUCTION')}</div>
+  <div>
     <LocaleSwitcher />
   </div>
   <div class="center"><span role="alert" class="info">{$t('content.DATA_STORE_MESSAGE')}</span></div>
@@ -22,29 +22,10 @@
     margin-top: calc(var(--spacing-1) * 4);
     margin-bottom: calc(var(--spacing-1) * 2);
 
-    .page-title {
-      grid-column: 1 / span 2;
-      margin: 0;
-      margin-bottom: calc(var(--spacing-1));
-    }
-
     .center {
       text-align: center;
       grid-column: 1 / span 2;
       margin-top: calc(var(--spacing-1));
-
-      @include query($medium) {
-        grid-column: 1 / span 1;
-      }
-    }
-
-    .locale-switcher {
-      grid-column: 2 / span 2;
-      padding: var(--spacing-1) 0;
-    }
-
-    .intro {
-      grid-column: 1 / span 2;
 
       @include query($medium) {
         grid-column: 1 / span 1;
@@ -61,11 +42,6 @@
       @include query($medium) {
         grid-column: 1 / span 1;
       }
-    }
-
-    .topic {
-      color: var(--color-accent);
-      font-size: var(--size-6);
     }
   }
 </style>

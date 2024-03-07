@@ -6,7 +6,7 @@
 </script>
 
 <ButtonGroup legend={false} bind:selected={$CURRENT_ASPECT_RATIO_INDEX}>
-  <div class="grid-third--fixed" slot="options">
+  <div class="w-full grid grid-cols-3 gap-8" slot="options">
     {#each ASPECT_RATIOS as [w, h], i}
       <RadioButton value={i} checked={i === DEFAULT_ASPECT_RATIO} class="tile--simple">
         <span>{w}&#8239;:&#8239;{h}</span>
