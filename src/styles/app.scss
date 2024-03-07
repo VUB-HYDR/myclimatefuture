@@ -115,17 +115,6 @@ p {
   line-height: 1.5;
 }
 
-a {
-  @apply text-accent transition-colors;
-
-  &:hover,
-  &:focus,
-  &.active,
-  &.quiete {
-    @apply text-primary;
-  }
-}
-
 strong,
 em,
 .button_title,

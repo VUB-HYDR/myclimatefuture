@@ -4,7 +4,7 @@
   import { t } from '$lib/translations';
   import 'tippy.js/dist/tippy.css';
   import '../styles/app.scss';
-  import '../app.css';
+  import '../app.scss';
 
   // This is used to change the color sheme of the website depending on the selected warming level
   $: temperatureClass = `level-${$CURRENT_TEMPERATURE_INDEX}`;

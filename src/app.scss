@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-accent transition-colors underline decoration-accent-light hover:decoration-accent;
+
+    &:hover,
+    &:focus,
+    &.active,
+    &.quiete {
+      @apply text-primary hover:text-accent;
+    }
+  }
+}

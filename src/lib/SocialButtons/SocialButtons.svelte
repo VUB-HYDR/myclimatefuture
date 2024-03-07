@@ -82,7 +82,6 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
-      @include reset();
     }
 
     @include query($medium) {
