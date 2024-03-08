@@ -8,9 +8,12 @@
 
     &:hover,
     &:focus,
-    &.active,
-    &.quiete {
+    &.active {
       @apply text-primary hover:text-accent;
+    }
+
+    &.quiet {
+      @apply text-primary decoration-gray-600;
     }
   }
 }
