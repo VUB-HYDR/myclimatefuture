@@ -1,5 +1,8 @@
 {
   "SLUG": "it",
+  "PAGE_TITLE": "Come vivrò il cambiamento climatico?",
+  "PAGE_DESCRIPTION": "Le giovani generazioni sono gravemente minacciate dai cambiamenti climatici. Scopri quanti eventi estremi climatici in più dovrai affrontare nel corso della tua vita.",
+  "PREVIEW_DESCRIPTION": "Le giovani generazioni sono gravemente minacciate dai cambiamenti climatici. Scopri quanti eventi estremi climatici in più dovrai affrontare nel corso della tua vita.",
   "HEADLINE": "Come vivrò il cambiamento climatico?",
   "INTRODUCTION": "<p>Qui puoi scoprire quanti eventi estremi climatici dovrai affrontare in più nel corso della tua vita rispetto a un mondo senza cambiamenti climatici. I risultati si basano su <a href='https://www.science.org/doi/10.1126/science.abi7339'>ricerche scientifiche solide</a>.</p>",
   "DATA_STORE_MESSAGE": "Non memorizziamo i tuoi dati.",
@@ -16,6 +19,8 @@
   "SCENARIO_CURRENT_DESCRIPTION": "Portare a un riscaldamento globale di 3,5°C entro il 2100",
   "SCENARIO_CURRENT_BUTTON": "Clicca per selezionare uno scenario di forte riscaldamento globale",
   "QUESTION_LOCATION": "Di dove sei?",
+  "LOCATION_BUTTON_WORLD": "",
+  "LOCATION_BUTTON_REGION": "",
   "LOCATION_WORLD": "Mondo",
   "LOCATION_WORLD_SHORT": "Mondo",
   "LOCATION_ASIA_PACIFIC": "Asia orientale & Pacifico",
@@ -84,13 +89,13 @@
   "TYPE_TROPICAL_CYCLONES": "cicloni tropicali",
   "TYPE_DROUGHTS": "siccità",
   "TYPE_HEATWAVES": "ondate di calore",
-  "GRAPHIC_TEXT_1": "In un mondo {{temp}}, io, a {{age}} anni, sperimenterò",
-  "GRAPHIC_TEXT_1_REGION": "",
-  "GRAPHIC_TEXT_1_CLEAN": "In un mondo {{temp}}, io, a {{age}} anni, sperimenterò",
-  "GRAPHIC_TEXT_1_REGION_CLEAN": "",
+  "GRAPHIC_TEXT_1": "In un mondo di <strong>{{temp}} ℃</strong>, io, a <strong>{{age}} anni</strong>, sperimenterò",
+  "GRAPHIC_TEXT_1_REGION": "In un mondo di <strong>{{temp}} ℃</strong>, io, a<strong>{{age}} anni</strong>, sperimenterò",
+  "GRAPHIC_TEXT_1_CLEAN": "In un mondo di {{temp}} ℃, io, a {{age}} anni, sperimenterò",
+  "GRAPHIC_TEXT_1_REGION_CLEAN": "In un mondo di {{temp}} ℃, io, a{{age}} anni, sperimenterò",
   "GRAPHIC_TEXT_2": "e",
   "GRAPHIC_TEXT_3": "più che senza cambiamenti climatici.",
   "GRAPHIC_TEXT_4": "Fai il test",
-  "GRAPHIC_GRAPHIC_TEXT": "In un mondo di 3,5°C, io, a 18 anni, sperimenterò questi aumenti",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": ""
+  "GRAPHIC_GRAPHIC_TEXT": "In un mondo di <strong>{{temp}} ℃</strong>, io, a <strong>{{age}} anni</strong>, sperimenterò questi aumenti",
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "In un mondo di <strong>{{temp}} ℃</strong>, io, a <strong>{{age}} anni</strong>, sperimenterò questi aumenti"
 }

@@ -1,5 +1,5 @@
 <script>
-  import { HASHTAG, PAGE_TITLE, RISKS_EMOJIES, URL, URL_SIMPLE } from '$config';
+  import { HASHTAG, PAGE_NAME, RISKS_EMOJIES, URL, URL_SIMPLE } from '$config';
   import { t } from '$lib/translations';
   import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES } from '$store';
   import Facebook from '../Icons/Facebook.svelte';
@@ -59,7 +59,7 @@
   $: tw = `https://twitter.com/intent/tweet?url=${URL_SIMPLE}&text=${text_short}`;
   $: tg = `https://t.me/share/url?url=${URL}&text=${text_default}`;
   $: wa = `https://api.whatsapp.com/send?text=${text_pure}`;
-  $: mail = `mailto:?subject=${PAGE_TITLE}&body=${text_mail}`;
+  $: mail = `mailto:?subject=${PAGE_NAME}&body=${text_mail}`;
 </script>
 
 <div class="page-social-buttons">

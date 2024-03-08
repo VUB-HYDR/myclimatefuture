@@ -1,5 +1,8 @@
 {
   "SLUG": "nl",
+  "PAGE_TITLE": "Hoe zal ik de klimaatverandering voelen?",
+  "PAGE_DESCRIPTION": "Jongere generaties worden ernstig bedreigd door klimaatverandering. Ontdek met hoeveel klimaatextremen jij nog te maken krijgt in je leven.",
+  "PREVIEW_DESCRIPTION": "Jongere generaties worden ernstig bedreigd door klimaatverandering. Ontdek met hoeveel extremen van het klimaat jij nog te maken krijgt in jouw leven.",
   "HEADLINE": "Hoe zal ik de klimaatverandering voelen?",
   "INTRODUCTION": "<p>Hier kun je ontdekken hoeveel meer klimaatextremen je tijdens je leven zult meemaken in vergelijking met een wereld zonder klimaatverandering. De resultaten zijn gebaseerd op <a href='https://www.science.org/doi/10.1126/science.abi7339'>betrouwbare wetenschap</a>.</p>",
   "DATA_STORE_MESSAGE": "We slaan uw gegevens niet op.",
@@ -16,6 +19,8 @@
   "SCENARIO_CURRENT_DESCRIPTION": "Leidend tot een opwarming van de aarde met 3,5 °C tegen 2100",
   "SCENARIO_CURRENT_BUTTON": "Klik om een scenario met sterke opwarming van de aarde te selecteren",
   "QUESTION_LOCATION": "Waar kom je vandaan?",
+  "LOCATION_BUTTON_WORLD": "",
+  "LOCATION_BUTTON_REGION": "",
   "LOCATION_WORLD": "Wereld",
   "LOCATION_WORLD_SHORT": "Wereld",
   "LOCATION_ASIA_PACIFIC": "Oost-Azië & Pacific",
@@ -84,13 +89,13 @@
   "TYPE_TROPICAL_CYCLONES": "tropische cyclonen",
   "TYPE_DROUGHTS": "droogtes",
   "TYPE_HEATWAVES": "hittegolven",
-  "GRAPHIC_TEXT_1": "In een <strong>{{temp}}°C</strong> wereld zal ik, als <strong>{{age}}-jarige</strong>, het volgende ervaren",
-  "GRAPHIC_TEXT_1_REGION": "",
-  "GRAPHIC_TEXT_1_CLEAN": "In een {{temp}}°C wereld zal ik, als {{age}}-jarige, het volgende ervaren",
-  "GRAPHIC_TEXT_1_REGION_CLEAN": "",
+  "GRAPHIC_TEXT_1": "In een <strong>{{temp}} ℃</strong> wereld zal ik, als <strong>{{age}}-jarige</strong>, het volgende ervaren",
+  "GRAPHIC_TEXT_1_REGION": "In een <strong>{{temp}} ℃</strong> wereld zal ik, als <strong>{{age}}-jarige</strong>, het volgende ervaren",
+  "GRAPHIC_TEXT_1_CLEAN": "In een {{temp}} ℃ wereld zal ik, als {{age}}-jarige, het volgende ervaren",
+  "GRAPHIC_TEXT_1_REGION_CLEAN": "In een {{temp}} ℃ wereld zal ik, als {{age}}-jarige, het volgende ervaren",
   "GRAPHIC_TEXT_2": "en",
   "GRAPHIC_TEXT_3": "meer ervaren dan zonder klimaatverandering.",
   "GRAPHIC_TEXT_4": "Doe de test",
-  "GRAPHIC_GRAPHIC_TEXT": "In een 3,5°C-warmere wereld zal ik, als 18-jarige,",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": ""
+  "GRAPHIC_GRAPHIC_TEXT": "In een  <strong>{{temp}} ℃</strong>-warmere wereld zal ik, als <strong>{{age}}-jarige</strong>,",
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "In een  <strong>{{temp}} ℃</strong>-warmere wereld zal ik, als <strong>{{age}}-jarige</strong>,"
 }

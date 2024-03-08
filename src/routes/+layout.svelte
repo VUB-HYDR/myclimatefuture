@@ -8,9 +8,6 @@
 
   // This is used to change the color sheme of the website depending on the selected warming level
   $: temperatureClass = `level-${$CURRENT_TEMPERATURE_INDEX}`;
-
-  /** @type { import('./$types').LayoutData } */
-  export let data;
 </script>
 
 <Header />
@@ -20,24 +17,17 @@
 </main>
 
 <footer class="page-footer wrapper">
-  <p class="column">{$t('content.COPYRIGHT')} 2021. {$t('content.AUTHOR_DESIGN')} <a target="_blank" rel="noopener noreferrer author" href="https://jonasparnow.com" class="quiete">Jonas Parnow</a>. {$t('content.SOURCE_CODE')} <a target="_blank" rel="noopener noreferrer" href="https://github.com/VUB-HYDR/myclimatefuture" class="quiete">Github</a>.</p>
+  <p class="column">{$t('content.COPYRIGHT', { year: new Date().getFullYear() })} {@html $t('content.AUTHOR_DESIGN', { link: '<a href="https://jonasparnow.com" class="quiet">Jonas Parnow</a>' })} {@html $t('content.SOURCE_CODE', { link: '<a href="https://github.com/VUB-HYDR/myclimatefuture" class="quiet">Github</a>' })}</p>
 </footer>
 
 <style lang="scss">
   @import '../styles/global.scss';
 
   main {
-    display: grid;
-    grid-row-gap: var(--size-vertical-outer-gap);
-    justify-content: center;
-    justify-items: center;
+    @apply grid gap-y-16 justify-center justify-items-center;
   }
 
   .page-footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: var(--size-vertical-inner-gap);
-    margin-bottom: var(--size-vertical-inner-gap);
-    align-items: center;
+    @apply flex flex-col my-8 items-center;
   }
 </style>

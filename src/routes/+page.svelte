@@ -1,5 +1,5 @@
 <script>
-  import { PAGE_DESCRIPTION, PAGE_NAME, URL } from '$config';
+  import { PAGE_NAME, URL } from '$config';
   import { t, locale } from '$lib/translations';
   import About from '$lib/About.svelte';
   import AspectRatio from '$lib/AspectRatio/AspectRatio.svelte';
@@ -12,30 +12,31 @@
   import Text from '$lib/Text/Text.svelte';
   import Vis from '$lib/Vis/Vis.svelte';
   //
-  $: title = $t('content.HEADLINE');
+  $: title = `${PAGE_NAME} - ${$t('content.PAGE_TITLE')}`;
+  $: description = $t('content.PAGE_DESCRIPTION');
 </script>
 
 <svelte:head>
-  <title>{PAGE_NAME}</title>
+  <title>{title}</title>
   <meta name="robots" content="index,follow" />
-  <meta name="description" content={PAGE_DESCRIPTION} />
+  <meta name="description" content={description} />
   <meta property="og:site_name" content={PAGE_NAME} />
   <meta property="og:locale" content={$locale} />
   <meta property="og:url" content={URL} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
-  <meta property="og:description" content={PAGE_DESCRIPTION} />
+  <meta property="og:description" content={description} />
   <meta property="og:image" content={`${URL}/preview.png`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
-  <meta property="og:image:alt" content={PAGE_DESCRIPTION} />
+  <meta property="og:image:alt" content={$t('content.PREVIEW_DESCRIPTION')} />
   <meta property="og:updated_time" content={new Date().toString()} />
   <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={PAGE_DESCRIPTION} />
+  <meta itemprop="description" content={description} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content={`${URL}/preview.png`} />
   <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={PAGE_DESCRIPTION} />
+  <meta name="twitter:description" content={description} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />

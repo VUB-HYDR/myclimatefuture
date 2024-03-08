@@ -9,7 +9,7 @@
   import Slide from './Slider/Slide.svelte';
   import H2 from '$lib/ui/H2.svelte';
 
-  import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, REGIONS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
+  import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
   import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR_SLIDER } from '$store';
 
   let age;
@@ -19,13 +19,14 @@
 
   $: ageEmoji = getAgeEmoji(age);
 
-  $: listRegions = REGIONS.map((region, i) => {
+  $: listRegions = KEYS_REGIONS.map((key, i) => {
+    const isWorld = i === 0;
     return {
       value: i,
       checked: i === DEFAULT_REGION,
-      region: $t(`content.${KEYS_REGIONS[i]}`),
-      countries: i === 0 ? false : $t(`content.${KEYS_REGIONS[i]}_COUNTRIES`),
-      title: `Click to select ${i === 0 ? '' : 'the '}${region} region`,
+      region: $t(`content.${key}`),
+      countries: isWorld ? false : $t(`content.${key}_COUNTRIES`),
+      title: isWorld ? $t('content.LOCATION_BUTTON_WORLD') : $t('content.LOCATION_BUTTON_REGION', { region: $t(`content.${key}`) }),
       name: `region_${i}`,
     };
   });
