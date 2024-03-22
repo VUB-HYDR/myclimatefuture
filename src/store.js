@@ -11,6 +11,7 @@ import de from 'd3-format/locale/de-DE';
 import it from 'd3-format/locale/it-IT';
 import fr from 'd3-format/locale/fr-FR';
 import nl from 'd3-format/locale/nl-NL';
+import cn from 'd3-format/locale/zh-CN';
 
 const locales = {
   de: de,
@@ -18,9 +19,10 @@ const locales = {
   it: it,
   fr: fr,
   nl: nl,
+  cn: cn,
 };
 
-export const FORMAT_LOCALE = derived(locale, ($locale) => locales[$locale] ?? en);
+export const FORMAT_LOCALE = derived(locale, ($locale) => get(locales, $locale, en));
 export const FORMAT_NUMBER = derived(FORMAT_LOCALE, ($locale) => formatLocale($locale).format('.1f'));
 
 export const CURRENT_YEAR_SLIDER = writable([LAST_YEAR - DEFAULT_AGE]);
