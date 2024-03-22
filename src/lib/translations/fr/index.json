@@ -19,8 +19,8 @@
   "SCENARIO_CURRENT_DESCRIPTION": "Vers un réchauffement climatique de 3,5°C d'ici 2100",
   "SCENARIO_CURRENT_BUTTON": "Cliquez pour sélectionner un scénario de fort réchauffement climatique",
   "QUESTION_LOCATION": "D’où êtes-vous?",
-  "LOCATION_BUTTON_WORLD": "",
-  "LOCATION_BUTTON_REGION": "",
+  "LOCATION_BUTTON_WORLD": "Cliquez pour sélectionner le monde",
+  "LOCATION_BUTTON_REGION": "Cliquez pour sélectionner la région",
   "LOCATION_WORLD": "Monde",
   "LOCATION_WORLD_SHORT": "Monde",
   "LOCATION_ASIA_PACIFIC": "Asie de l'Est et Pacifique",
@@ -97,5 +97,5 @@
   "GRAPHIC_TEXT_3": "plus que sans changement climatique.",
   "GRAPHIC_TEXT_4": "Faites le test",
   "GRAPHIC_GRAPHIC_TEXT": "Dans un monde à <strong>{{temp}} ℃</strong>, en tant que personne de <strong>{{age}} ans</strong>, je connaîtrai ces augmentations",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": "Dans un monde à <strong>{{temp}} ℃</strong>, en tant que personne de <strong>{{age}} ans</strong>, je connaîtrai ces augmentations"
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "Dans un monde à <strong>{{temp}} ℃</strong>, en tant que personne de <strong>{{age}} ans</strong> {{region; Moyen-Orient et Afrique du Nord:du; default:de l’ ;}}<strong>{{region}}</strong>, je connaîtrai ces augmentations"
 }

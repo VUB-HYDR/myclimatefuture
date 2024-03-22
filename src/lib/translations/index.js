@@ -8,6 +8,7 @@ export const config = {
     fr: { lang },
     it: { lang },
     nl: { lang },
+    cn: { lang },
   },
   loaders: [
     {
@@ -29,6 +30,11 @@ export const config = {
       locale: 'nl',
       key: 'content',
       loader: async () => (await import('./nl/index.json')).default,
+    },
+    {
+      locale: 'cn',
+      key: 'content',
+      loader: async () => (await import('./cn/index.json')).default,
     },
   ],
 };
