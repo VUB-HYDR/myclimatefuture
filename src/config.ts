@@ -1,5 +1,4 @@
-export const URL = 'https://myclimatefuture.info';
-export const URL_SIMPLE = 'myclimatefuture.info';
+export const URL_BASE = 'https://myclimatefuture.info';
 export const HASHTAG = 'myclimatefuture';
 export const PAGE_NAME = 'MyClimateFuture';
 export const LANGUAGE = 'en_GB';

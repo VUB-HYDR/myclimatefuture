@@ -1,7 +1,7 @@
 <script>
-  import { HASHTAG, PAGE_NAME, RISKS_EMOJIES, URL, URL_SIMPLE } from '$config';
+  import { HASHTAG, PAGE_NAME, RISKS_EMOJIES } from '$config';
   import { t } from '$lib/translations';
-  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES } from '$store';
+  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES, LOCALE_URL } from '$store';
   import Facebook from '../Icons/Facebook.svelte';
   import Mail from '../Icons/Mail.svelte';
   import Telegram from '../Icons/Telegram.svelte';
@@ -18,7 +18,7 @@
   $: text_url = $t('content.GRAPHIC_TEXT_4');
 
   function generateURL(text, emojis, long_url) {
-    return `${text} ${emojis ? '👉' : ''} ${long_url ? URL : URL_SIMPLE}`;
+    return `${text} ${emojis ? '👉' : ''} ${long_url ? $LOCALE_URL.href : $LOCALE_URL.label}`;
   }
 
   /**
@@ -55,9 +55,9 @@
   $: text_short = generateText(text_start_short, generateList($LABELS_RISKS, $VALUES, text_and, false, true), text_end);
   $: text_mail = generateText(text_start_long, generateList($LABELS_RISKS, $VALUES, text_and, true, true), text_end, generateURL(text_url, true, true));
 
-  $: fb = `https://www.facebook.com/sharer/sharer.php?u=${URL_SIMPLE}&quote=${text_pure}&hashtag=${HASHTAG}`;
-  $: tw = `https://twitter.com/intent/tweet?url=${URL_SIMPLE}&text=${text_short}`;
-  $: tg = `https://t.me/share/url?url=${URL}&text=${text_default}`;
+  $: fb = `https://www.facebook.com/sharer/sharer.php?u=${$LOCALE_URL.label}&quote=${text_pure}&hashtag=${HASHTAG}`;
+  $: tw = `https://twitter.com/intent/tweet?url=${$LOCALE_URL.label}&text=${text_short}`;
+  $: tg = `https://t.me/share/url?url=${$LOCALE_URL.href}&text=${text_default}`;
   $: wa = `https://api.whatsapp.com/send?text=${text_pure}`;
   $: mail = `mailto:?subject=${PAGE_NAME}&body=${text_mail}`;
 </script>

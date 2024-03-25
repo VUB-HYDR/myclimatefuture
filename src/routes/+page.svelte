@@ -1,5 +1,6 @@
 <script>
-  import { PAGE_NAME, URL } from '$config';
+  import { PAGE_NAME } from '$config';
+  import { LOCALE_URL } from '$store';
   import { t, locale } from '$lib/translations';
   import About from '$lib/About.svelte';
   import AspectRatio from '$lib/AspectRatio/AspectRatio.svelte';
@@ -22,11 +23,11 @@
   <meta name="description" content={description} />
   <meta property="og:site_name" content={PAGE_NAME} />
   <meta property="og:locale" content={$locale} />
-  <meta property="og:url" content={URL} />
+  <meta property="og:url" content={$LOCALE_URL.href} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${URL}/preview.png`} />
+  <meta property="og:image" content={`${$LOCALE_URL.href}/preview.png`} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="600" />
   <meta property="og:image:alt" content={$t('content.PREVIEW_DESCRIPTION')} />
@@ -34,13 +35,13 @@
   <meta itemprop="name" content={title} />
   <meta itemprop="description" content={description} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content={`${URL}/preview.png`} />
+  <meta name="twitter:image" content={`${$LOCALE_URL.href}/preview.png`} />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="canonical" href={URL} />
+  <link rel="canonical" href={$LOCALE_URL.href} />
 </svelte:head>
 
 <Head />

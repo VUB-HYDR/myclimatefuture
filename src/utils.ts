@@ -1,4 +1,4 @@
-import { EMOJI_AGES, URL } from '$config';
+import { EMOJI_AGES } from '$config';
 import { get } from 'lodash-es';
 
 export function getValue(data, region: number, risk: number, temperature: number, age: number) {

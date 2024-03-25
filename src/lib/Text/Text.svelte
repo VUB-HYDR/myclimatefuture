@@ -1,7 +1,7 @@
 <script>
   import { t } from '$lib/translations';
-  import { HASHTAG, ID_TEXT, RISKS_EMOJIES, URL, URL_SIMPLE, RISKS_LABELS } from '$config';
-  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, VALUES, CURRENT_TEMPERATURE_STRING } from '$store';
+  import { HASHTAG, ID_TEXT, RISKS_EMOJIES, RISKS_LABELS } from '$config';
+  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, VALUES, CURRENT_TEMPERATURE_STRING, LOCALE_URL } from '$store';
   import CopyButton from '../CopyButton/CopyButton.svelte';
 
   $: l = RISKS_LABELS.length - 2;
@@ -29,7 +29,7 @@
     {/each}
     {$t('content.GRAPHIC_TEXT_3')}<br />
     #{HASHTAG}<br />
-    {$t('content.GRAPHIC_TEXT_4')} 👉 <a href={URL} target="_blank" rel="noopener noreferrer">{URL_SIMPLE}</a><br />
+    {$t('content.GRAPHIC_TEXT_4')} 👉 <a href={$LOCALE_URL.href} target="_blank" rel="noopener noreferrer">{$LOCALE_URL.label}</a><br />
   </span>
   <CopyButton />
 </div>
