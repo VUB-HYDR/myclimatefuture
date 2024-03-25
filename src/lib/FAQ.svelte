@@ -12,7 +12,7 @@
     defaultValue: 'item-1',
   });
 
-  const items = [
+  $: items = [
     {
       question: $t('content.QUESTION_1_QUESTION'),
       answer: $t('content.QUESTION_1_ANSWER'),
