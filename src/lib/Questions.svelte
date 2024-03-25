@@ -1,11 +1,9 @@
 <script>
-  // import LL from '$i18n/i18n-svelte';
   import { t, locale } from '$lib/translations';
   import { getAgeEmoji } from '$utils';
   import ButtonGroup from './ButtonGroup/ButtonGroup.svelte';
   import RadioButton from './ButtonGroup/RadioButton.svelte';
   import Info from './Icons/Info.svelte';
-  import Slider from './Slider/Slider.svelte';
   import Slide from './Slider/Slide.svelte';
   import H2 from '$lib/ui/H2.svelte';
 

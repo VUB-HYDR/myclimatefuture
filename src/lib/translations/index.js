@@ -51,6 +51,6 @@ export const config = {
   ],
 };
 
-export const { t, loading, locales, locale, loadTranslations } = new i18n(config);
+export const defaultLocale = 'en';
 
-loading.subscribe(($loading) => $loading && console.log('Loading translations...'));
+export const { t, locale, locales, loading, addTranslations, loadTranslations, translations, setRoute, setLocale } = new i18n(config);

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t, locales, locale } from '$lib/translations';
+  import { goto } from '$app/navigation';
   import Chevron from '$lib/Icons/Chevron.svelte';
   import Check from '$lib/Icons/Check.svelte';
   import { createSelect, melt, type CreateSelectProps } from '@melt-ui/svelte';
@@ -7,7 +8,8 @@
 
   const handleChange: CreateSelectProps['onSelectedChange'] = ({ next }) => {
     if (next?.value !== $locale) {
-      locale.set(next?.value);
+      // locale.set(next?.value);
+      goto(`/${next.value}`);
     }
     return next;
   };
@@ -27,11 +29,11 @@
     },
   });
 
-  $: {
-    if ($selected?.value !== $locale) {
-      selected.set({ value: $locale, label: $t(`lang.${$locale}`) ?? $locale });
-    }
-  }
+  // $: {
+  //   if ($selected?.value !== $locale) {
+  //     selected.set({ value: $locale, label: $t(`lang.${$locale}`) ?? $locale });
+  //   }
+  // }
 </script>
 
 <div class="flex flex-col gap-1">
@@ -48,7 +50,6 @@
           <div class="check {$isSelected(value) ? 'block' : 'hidden'}">
             <Check class="size-4" />
           </div>
-
           <span class="ml-2">{$t(`lang.${value}`)}</span>
         </div>
       {/each}

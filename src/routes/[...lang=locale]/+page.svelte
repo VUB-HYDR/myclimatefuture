@@ -12,7 +12,7 @@
   import SocialButtons from '$lib/SocialButtons/SocialButtons.svelte';
   import Text from '$lib/Text/Text.svelte';
   import Vis from '$lib/Vis/Vis.svelte';
-  //
+
   $: title = `${PAGE_NAME} - ${$t('content.PAGE_TITLE')}`;
   $: description = $t('content.PAGE_DESCRIPTION');
 </script>
@@ -61,7 +61,7 @@
 <Footer />
 
 <style lang="scss">
-  @import '../styles/global.scss';
+  @import '$styles/global.scss';
 
   .generator {
     display: grid;

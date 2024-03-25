@@ -12,6 +12,7 @@ const config = {
       $config: 'src/config.ts',
       $store: 'src/store.js',
       $utils: 'src/utils.ts',
+      $styles: 'src/styles',
     },
   },
   preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
