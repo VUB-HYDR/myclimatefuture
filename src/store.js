@@ -12,6 +12,7 @@ import it from 'd3-format/locale/it-IT';
 import fr from 'd3-format/locale/fr-FR';
 import nl from 'd3-format/locale/nl-NL';
 import cn from 'd3-format/locale/zh-CN';
+import es from 'd3-format/locale/es-ES';
 
 const locales = {
   de: de,
@@ -20,6 +21,7 @@ const locales = {
   fr: fr,
   nl: nl,
   cn: cn,
+  es: es,
 };
 
 export const FORMAT_LOCALE = derived(locale, ($locale) => get(locales, $locale, en));

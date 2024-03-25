@@ -172,31 +172,21 @@ const CONTENT_KEYS = [
   ['Graphic Graphic Text Region', 'GRAPHIC_GRAPHIC_TEXT_REGION', { usePlainText: false, wrapParagraph: false }],
 ];
 
-function processSingleObject(obj) {
+function processSingleObject(obj, defaultTranslation) {
   const arr = CONTENT_KEYS.map(([keySource, keyTarget, { usePlainText = true, wrapParagraph = true, sanitizeDom = false } = {}]) => {
-    return [keyTarget, getRichText(obj, keySource, usePlainText, wrapParagraph, sanitizeDom)];
+    let translation = getRichText(obj, keySource, usePlainText, wrapParagraph, sanitizeDom);
+    if (!translation) {
+      translation = getRichText(defaultTranslation, keySource, usePlainText, wrapParagraph, sanitizeDom);
+    }
+    return [keyTarget, translation];
   });
   return Object.fromEntries(arr);
 }
 
 function processResults(results) {
   const content = results.filter((d) => getSlug(d));
-  return content.map((obj) => processSingleObject(obj));
-}
-
-function generateContent(slug, translation) {
-  return JSON.stringify(translation, null, 2);
-  return `// @ts-check
-
-/**
- * @typedef { import('../i18n-types').${slug === 'en' ? 'BaseTranslation' : 'Translation'} } ${slug === 'en' ? 'BaseTranslation' : 'Translation'}
- */
-
-/** @satisfies { ${slug === 'en' ? 'BaseTranslation' : 'Translation'} } */
-const ${slug} = ${JSON.stringify(translation, null, 2)};
-
-export default ${slug};
-`;
+  const defaultTranslation = content.find((d) => getSlug(d) === 'en');
+  return content.map((obj) => processSingleObject(obj, defaultTranslation));
 }
 
 async function getTranslations() {
@@ -206,10 +196,9 @@ async function getTranslations() {
   console.log(`Items: ${relevant.length}`);
   relevant.map((translation) => {
     const slug = translation[KEY_SLUG];
-    const content = generateContent(slug, translation);
+    const content = JSON.stringify(translation, null, 2);
     writeTranslationFile(content, slug);
   });
-  exportData(relevant, 'results');
 }
 
 getTranslations();
