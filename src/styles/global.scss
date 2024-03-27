@@ -52,15 +52,14 @@ $max-width-column: 570px;
 
 @mixin drop-border {
   border: 2px solid var(--primary-color);
-  // border-radius: var(--border-radius);
   padding: calc(var(--spacing-1) / 2);
-  width: calc(100% - var(--spacing-1) - 4px);
+  width: calc(100% - 4px);
   box-shadow: 3px 3px var(--tertiary-color);
   transition: border-color var(--transition);
 
   @include query($medium) {
     padding: var(--spacing-1);
-    width: calc(100% - var(--spacing-1) * 2 - 4px);
+    width: calc(100% - 4px);
   }
 
   &:focus {
