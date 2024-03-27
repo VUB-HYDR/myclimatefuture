@@ -6,10 +6,15 @@
 
 <header class="mt-16 mb-8 grid-half column">
   <span class="text-xs text-accent">#{HASHTAG}</span>
-  <h1 class="col-span-2 col-start-1 mb-4 text-4xl md:text-5xl lg:text-6xl font-bold hyphens-auto lg:hyphens-none">{$t('content.HEADLINE')}</h1>
+  <h1 class="col-span-2 col-start-1 mb-8 text-4xl md:text-5xl lg:text-6xl font-bold hyphens-auto lg:hyphens-none">{$t('content.HEADLINE')}</h1>
   <div class="col-span-2 col-start-1 md:col-span-1">{@html $t('content.INTRODUCTION')}</div>
   <LocaleSwitcher />
-  <div class="col-span-2 col-start-1 md:col-span-1 text-center mt-4"><span role="alert" class="info">{$t('content.DATA_STORE_MESSAGE')}</span></div>
+  <div class="col-span-2 col-start-1 md:col-span-1 text-center mt-4">
+    <span
+      role="alert"
+      class="info">{$t('content.DATA_STORE_MESSAGE')}</span
+    >
+  </div>
 </header>
 
 <style lang="scss">
