@@ -1,4 +1,5 @@
 import { EMOJI_AGES, URL_BASE } from '$config';
+import { config as translations } from '$lib/translations';
 import { get } from 'lodash-es';
 
 export function getValue(data, region: number, risk: number, temperature: number, age: number) {
@@ -81,7 +82,7 @@ function generateLocaleURL(locale: string) {
 }
 
 const LOCALE_URLS = Object.fromEntries(
-  locales.map((lang) => {
+  Object.keys(translations.translations).map((lang) => {
     return [lang, generateLocaleURL(lang)];
   })
 );
