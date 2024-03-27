@@ -1,7 +1,7 @@
 <script>
   import { t } from '$lib/translations';
   import { getAgeEmoji } from '$utils';
-  import Slide from './Slider/Slide.svelte';
+  import Slider from './Slider/Slider.svelte';
   import H2 from '$lib/ui/H2.svelte';
   import Selection from '$lib/Questions/Selection.svelte';
 
@@ -38,7 +38,7 @@
       emoji={ageEmoji}
       slot="labelText">{$t('content.QUESTION_AGE')}</H2
     >
-    <Slide
+    <Slider
       value={CURRENT_YEAR_SLIDER}
       min={LAST_YEAR - NUMBER_OF_YEARS}
       max={LAST_YEAR}
