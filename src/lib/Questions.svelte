@@ -1,22 +1,14 @@
 <script>
-  import { t, locale } from '$lib/translations';
+  import { t } from '$lib/translations';
   import { getAgeEmoji } from '$utils';
-  import ButtonGroup from './ButtonGroup/ButtonGroup.svelte';
-  import RadioButton from './ButtonGroup/RadioButton.svelte';
-  import Info from './Icons/Info.svelte';
   import Slide from './Slider/Slide.svelte';
   import H2 from '$lib/ui/H2.svelte';
   import Selection from '$lib/Questions/Selection.svelte';
 
-  import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
+  import { KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
   import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR_SLIDER } from '$store';
 
-  let age;
-  CURRENT_AGE.subscribe((value) => {
-    age = value;
-  });
-
-  $: ageEmoji = getAgeEmoji(age);
+  $: ageEmoji = getAgeEmoji($CURRENT_AGE);
 
   $: listRegions = KEYS_REGIONS.map((key, i) => {
     const isWorld = i === 0;
