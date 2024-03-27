@@ -1,15 +1,3 @@
-@mixin button-reset() {
-  display: inline-block;
-  padding: 0;
-  border: 0;
-  appearance: none;
-  background: none;
-  cursor: pointer;
-  &::-moz-focus-inner {
-    border: 0;
-  }
-}
-
 @mixin focus-outline($mode) {
   outline: 3px solid var(--color-accent);
   outline-offset: -3px;
@@ -18,29 +6,6 @@
     outline-style: dotted;
   }
 }
-
-$color-gray-1: #f4f4f4;
-$color-gray-2: #e0e0e0;
-$color-gray-3: #c6c6c6;
-$color-gray-4: #a8a8a8;
-$color-gray-5: #8d8d8d;
-$color-gray-6: #6f6f6f;
-$color-gray-7: #525252;
-$color-gray-8: #393939;
-$color-gray-9: #262626;
-$color-gray-10: #161616;
-
-$duration-fast-02: 0.3s;
-
-$spacing-05: 0.5rem;
-
-$border-subtle: $color-gray-1;
-$text-disabled: $color-gray-3;
-$icon-disabled: $color-gray-3;
-$field-disabled: $color-gray-4;
-$border-disabled: $color-gray-4;
-
-$background-hover: $color-gray-1;
 
 $narrow: 600px !default;
 $medium: 900px !default;
