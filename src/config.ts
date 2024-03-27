@@ -18,7 +18,7 @@ export const NUMBER_OF_YEARS = 60;
 export const DEFAULT_AGE = 18;
 export const DEFAULT_REGION = '0';
 export const DEFAULT_TEMPERATURE = '0';
-export const DEFAULT_ASPECT_RATIO = 0;
+export const DEFAULT_ASPECT_RATIO = '0';
 export const DOWNLOAD_IMAGE_PREFIX = 'myclimatefuture';
 export const ADVISORY_BOARD = [
   ['Wim Thiery', 'https://www.vub.be/en/profiel/wim-thiery', 'TEXT_WIM'],

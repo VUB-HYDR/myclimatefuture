@@ -1,16 +1,32 @@
 <script>
-  import { ASPECT_RATIOS, DEFAULT_ASPECT_RATIO } from '$config';
+  import { ASPECT_RATIOS } from '$config';
   import { CURRENT_ASPECT_RATIO_INDEX } from '$store';
-  import ButtonGroup from '../ButtonGroup/ButtonGroup.svelte';
-  import RadioButton from '../ButtonGroup/RadioButton.svelte';
+
+  import { createRadioGroup, melt } from '@melt-ui/svelte';
+
+  const {
+    elements: { root, item },
+    helpers: { isChecked },
+  } = createRadioGroup({
+    defaultValue: 'default',
+    value: CURRENT_ASPECT_RATIO_INDEX,
+  });
 </script>
 
-<ButtonGroup legend={false} bind:selected={$CURRENT_ASPECT_RATIO_INDEX}>
-  <div class="w-full grid grid-cols-3 gap-8" slot="options">
-    {#each ASPECT_RATIOS as [w, h], i}
-      <RadioButton value={i} checked={i === DEFAULT_ASPECT_RATIO} class="tile--simple">
-        <span>{w}&#8239;:&#8239;{h}</span>
-      </RadioButton>
-    {/each}
-  </div>
-</ButtonGroup>
+<div
+  use:melt={$root}
+  class="w-full flex gap-8"
+>
+  {#each ASPECT_RATIOS as [w, h], i}
+    {@const id = String(i)}
+    <button
+      use:melt={$item(id)}
+      class="cursor-default bg-white hover:text-accent text-sm"
+      class:text-accent={$isChecked(id)}
+      {id}
+      aria-labelledby="{id}-label"
+    >
+      {w}&#8239;:&#8239;{h}
+    </button>
+  {/each}
+</div>
