@@ -1,5 +1,4 @@
 <script>
-  // Adapted from https://github.com/carbon-design-system/carbon-components-svelte/blob/master/src/CopyButton/CopyButton.svelte
   import { ID_COPY, ID_TEXT } from '$config';
   import { t } from '$lib/translations';
   import ClipboardJS from 'clipboard';
@@ -9,10 +8,11 @@
 
   let copy_success = false;
   let timeout = undefined;
+  let elButton;
 
   onMount(async () => {
     clearTimeout(timeout);
-    const instance = tippy(document.getElementById(ID_COPY), { content: `Copied`, trigger: 'manual', offset: [0, 10], showOnCreate: false, hideOnClick: false, placement: 'top' });
+    const instance = tippy(elButton, { content: `Copied to clipboard`, trigger: 'manual', offset: [0, 10], showOnCreate: false, hideOnClick: false, placement: 'top' });
     const clipboard = new ClipboardJS(`#${ID_COPY}`, {
       // This is the node with the text
       target: () => document.getElementById(ID_TEXT),
@@ -29,7 +29,17 @@
   });
 </script>
 
-<button type="button" aria-live="polite" id={ID_COPY} class="copy-btn" class:copy_success aria-label={$t('content.BUTTON_COPY')} title={$t('content.BUTTON_COPY')} {...$$restProps}>
+<button
+  bind:this={elButton}
+  type="button"
+  aria-live="polite"
+  id={ID_COPY}
+  class="copy-btn absolute flex items-center justify-center rounded-full text-accent hover:text-primary"
+  class:copy_success
+  aria-label={$t('content.BUTTON_COPY')}
+  title={$t('content.BUTTON_COPY')}
+  {...$$restProps}
+>
   <Copy />
 </button>
 
@@ -37,25 +47,16 @@
   @import '../../styles/global.scss';
 
   .copy-btn {
-    @include button-reset();
-    position: absolute;
     right: calc(var(--spacing-1) * 0.5);
     bottom: calc(var(--spacing-1) * 0.5);
-    color: var(--color-accent);
-    border-radius: 50%;
     width: calc(var(--spacing-1) * 3);
     height: calc(var(--spacing-1) * 3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition:
       background-color var(--transition),
       color var(--transition);
 
     &:hover,
     &:focus {
-      color: var(--primary-color);
-
       &::after {
         background-color: var(--tertiary-color);
       }
