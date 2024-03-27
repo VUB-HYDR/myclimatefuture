@@ -1,7 +1,7 @@
 <script>
   import { ID_GRAPH, RISKS_LABELS } from '$config';
   import { t } from '$lib/translations';
-  import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, LABELS_RISKS, VALUES } from '$store';
+  import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
   import { splitIntoEvenChunks } from '$utils';
   import { scaleBand, scaleLinear } from 'd3-scale';
   import { capitalize } from 'lodash-es';
@@ -29,8 +29,6 @@
     progress.set(numbers.map((d) => (1 / max) * d));
   });
 
-  $: console.log({ max });
-
   $: base = $CURRENT_VIS_HEIGHT - padding.bottom;
 
   $: x = scaleBand()
@@ -52,10 +50,9 @@
   $: bars = $LABELS_RISKS.map((label, index) => {
     const size = y($progress[index] || 0);
     const value = $VALUES[index][0];
-
     const str = $VALUES[index][1];
-    // console.log({ value, str });
     const x1 = x(index) || 0;
+
     return {
       labels: splitIntoEvenChunks(capitalize(label), 2),
       value,
@@ -79,10 +76,11 @@
   });
 
   $: text = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_GRAPHIC_TEXT_REGION', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE, region: $CURRENT_REGION }) : $t('content.GRAPHIC_GRAPHIC_TEXT', { temp: $CURRENT_TEMPERATURE_STRING, age: $CURRENT_AGE });
+  $: [ratio_width, ratio_height] = $CURRENT_ASPECT_RATIO;
 </script>
 
 <div class="page-graph" role="img" title={$t('content.GRAPHIC_DESCRIPTION')} aria-label={$t('content.GRAPHIC_DESCRIPTION')} aria-live="polite">
-  <div class="page-graph-wrapper" bind:clientWidth={$CURRENT_VIS_WIDTH} style="height: {$CURRENT_VIS_HEIGHT}px" id={ID_GRAPH}>
+  <div class="page-graph-wrapper" bind:clientWidth={$CURRENT_VIS_WIDTH} style="aspect-ratio: {ratio_width} / {ratio_height};" id={ID_GRAPH}>
     <div class="graph-text" class:compact={$CURRENT_ASPECT_RATIO_INDEX === 0 && $CURRENT_REGION_INDEX !== 0} class:high={$CURRENT_ASPECT_RATIO_INDEX === 2}>
       <p>{@html text}</p>
     </div>
