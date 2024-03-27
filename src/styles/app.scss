@@ -80,6 +80,7 @@ label h2 {
 
 .button_title {
   font-size: var(--size-4);
+  line-height: 1.2;
 
   @include query($medium) {
     font-size: var(--size-3);
@@ -88,6 +89,7 @@ label h2 {
 
 .button_title--small {
   font-size: var(--size-5);
+  line-height: 1.2;
 
   @include query($medium) {
     font-size: var(--size-4);
