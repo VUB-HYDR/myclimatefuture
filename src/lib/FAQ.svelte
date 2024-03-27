@@ -48,18 +48,44 @@
   <H2 emoji="🤔">{$t('content.SECTION_FAQ')}</H2>
   <div>
     {#each items as { id, question, answer }, i}
-      <div use:melt={$item(id)} class="overflow-hidden transition-colors">
-        <h2 class="flex" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button use:melt={$trigger(id)} class="flex flex-1 cursor-pointer items-center justify-between bg-white px-5 py-5 text-base font-medium leading-none text-black transition-colors hover:text-accent focus:!ring-0 focus:outline-none focus-visible:text-accent" class:border-t={i !== 0} class:border-t-neutral-300={i !== 0}>
+      <div
+        use:melt={$item(id)}
+        class="overflow-hidden transition-colors"
+      >
+        <h2
+          class="flex"
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
+          <button
+            use:melt={$trigger(id)}
+            class="flex flex-1 cursor-pointer items-center justify-between bg-white px-5 py-5 text-base font-medium leading-none text-black transition-colors hover:text-accent focus:!ring-0 focus:outline-none focus-visible:text-accent"
+            class:border-t={i !== 0}
+            class:border-t-neutral-300={i !== 0}
+          >
             <span itemprop="name">{question}</span>
-            <div class="transition-transform" class:rotate-180={$isSelected(id)}>
+            <div
+              class="transition-transform"
+              class:rotate-180={$isSelected(id)}
+            >
               <Chevron />
             </div>
           </button>
         </h2>
         {#if $isSelected(id)}
-          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="content overflow-hidden text-sm text-neutral-600" use:melt={$content(id)} transition:slide>
-            <div itemprop="text" class="px-5 py-4">
+          <div
+            itemscope
+            itemprop="acceptedAnswer"
+            itemtype="https://schema.org/Answer"
+            class="content overflow-hidden text-sm text-neutral-600"
+            use:melt={$content(id)}
+            transition:slide
+          >
+            <div
+              itemprop="text"
+              class="px-5 pb-4"
+            >
               {@html answer}
             </div>
           </div>
