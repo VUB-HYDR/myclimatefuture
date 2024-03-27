@@ -79,35 +79,84 @@
   $: [ratio_width, ratio_height] = $CURRENT_ASPECT_RATIO;
 </script>
 
-<div class="page-graph" role="img" title={$t('content.GRAPHIC_DESCRIPTION')} aria-label={$t('content.GRAPHIC_DESCRIPTION')} aria-live="polite">
-  <div class="page-graph-wrapper" bind:clientWidth={$CURRENT_VIS_WIDTH} style="aspect-ratio: {ratio_width} / {ratio_height};" id={ID_GRAPH}>
-    <div class="graph-text" class:compact={$CURRENT_ASPECT_RATIO_INDEX === 0 && $CURRENT_REGION_INDEX !== 0} class:high={$CURRENT_ASPECT_RATIO_INDEX === 2}>
+<div
+  class="page-graph"
+  role="img"
+  title={$t('content.GRAPHIC_DESCRIPTION')}
+  aria-label={$t('content.GRAPHIC_DESCRIPTION')}
+  aria-live="polite"
+>
+  <div
+    class="page-graph-wrapper"
+    bind:clientWidth={$CURRENT_VIS_WIDTH}
+    style="aspect-ratio: {ratio_width} / {ratio_height};"
+    id={ID_GRAPH}
+  >
+    <div
+      class="graph-text"
+      class:compact={$CURRENT_ASPECT_RATIO_INDEX === 0 && $CURRENT_REGION_INDEX !== 0}
+      class:high={$CURRENT_ASPECT_RATIO_INDEX === 2}
+    >
       <p>{@html text}</p>
     </div>
     <div class="graph-footer">
       <span>{$t('content.GRAPHIC_LINK')}</span>
     </div>
-    <svg viewBox={`0 0 ${$CURRENT_VIS_WIDTH} ${$CURRENT_VIS_HEIGHT}`} xmlns="http://www.w3.org/2000/svg">
+    <svg
+      viewBox={`0 0 ${$CURRENT_VIS_WIDTH} ${$CURRENT_VIS_HEIGHT}`}
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g class="ticks">
         {#each ticks as { x1, x2, y1, y2 }}
-          <line {x1} {x2} {y1} {y2} />
+          <line
+            {x1}
+            {x2}
+            {y1}
+            {y2}
+          />
         {/each}
       </g>
       {#if xs[0] && xs[1]}
         <g>
           {#each bars as { labels, str, value, x, height, y, cx }}
             <g class="bar">
-              <rect {x} {y} {height} width={barWidth} />
-              <text x={cx} y={y - 10} text-anchor="middle" class="values" title={value}>{str}&times;</text>
-              <text x={cx} y={base + 15} text-anchor="middle" class="labels">
+              <rect
+                {x}
+                {y}
+                {height}
+                width={barWidth}
+                class="fill-accent"
+              />
+              <text
+                x={cx}
+                y={y - 10}
+                text-anchor="middle"
+                class="values"
+                title={value}>{str}&times;</text
+              >
+              <text
+                x={cx}
+                y={base + 15}
+                text-anchor="middle"
+                class="labels"
+              >
                 {#each labels as label, i}
-                  <tspan x={cx} dy={i > 0 ? ($CURRENT_VIS_WIDTH <= 600 ? 14 : 15) : 0}>{label}</tspan>
+                  <tspan
+                    x={cx}
+                    dy={i > 0 ? ($CURRENT_VIS_WIDTH <= 600 ? 14 : 15) : 0}>{label}</tspan
+                  >
                 {/each}
               </text>
             </g>
           {/each}
         </g>
-        <line class="base" x1={xs[0]} x2={xs[1]} y1={base} y2={base} />
+        <line
+          class="base"
+          x1={xs[0]}
+          x2={xs[1]}
+          y1={base}
+          y2={base}
+        />
       {/if}
     </svg>
   </div>
@@ -163,7 +212,6 @@
   }
 
   rect {
-    fill: var(--color-accent);
     transition: fill var(--transition);
   }
 
