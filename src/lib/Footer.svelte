@@ -14,18 +14,97 @@
   <H2 emoji="👩‍🔬">{$t('content.SECTION_BOARD')}</H2>
   <ul class="page-board">
     {#each ADVISORY_BOARD as [person, link, affiliation]}
-      <li><a href={link} target="_blank" rel="noopener noreferrer author">{person}</a>, {$t(`content.${affiliation}`)}</li>
+      <li>
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer author">{person}</a
+        >, {$t(`content.${affiliation}`)}
+      </li>
     {/each}
   </ul>
-  <div class="page-logos">
-    <a href="https://www.vub.be/" target="_blank" rel="noopener noreferrer" title="Vrije Universiteit Brussel"><img src={vub} alt="Vrije Universiteit Brussel" /></a>
-    <a href="https://climateanalytics.org/" target="_blank" rel="noopener noreferrer" title="Climate Analytics"><img src={ca} alt="Climate Analytics" /></a>
-    <a href="https://www.imperial.ac.uk/" target="_blank" rel="noopener noreferrer" title="Imperial College London"><img src={imp} alt="Imperial College London" /></a>
-    <a href="https://www.hu-berlin.de/en" class="hu" target="_blank" rel="noopener noreferrer" title="Humboldt University in Berlin"><img src={huberlin} alt="Humboldt University in Berlin" /></a>
-    <a href="https://www.pik-potsdam.de/en" target="_blank" rel="noopener noreferrer" title="Potsdam Institute for Climate Impact Research"><img src={pik} alt="Potsdam Institute for Climate Impact Research" /></a>
-    <a href="https://www.savethechildren.org/" target="_blank" rel="noopener noreferrer" title="Save the Children"><img src={stc} alt="Save the Children" /></a>
+  <div class="page-logos test">
+    <a
+      href="https://www.vub.be/"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Vrije Universiteit Brussel"
+      class="flex items-center justify-center"
+      ><img
+        src={vub}
+        alt="Vrije Universiteit Brussel"
+        class="max-w-36"
+      /></a
+    >
+    <a
+      href="https://climateanalytics.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Climate Analytics"
+      class="flex items-center justify-center"
+      ><img
+        src={ca}
+        alt="Climate Analytics"
+        class="max-w-36"
+      /></a
+    >
+    <a
+      href="https://www.imperial.ac.uk/"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Imperial College London"
+      class="flex items-center justify-center"
+      ><img
+        src={imp}
+        alt="Imperial College London"
+        class="max-w-36"
+      /></a
+    >
+    <a
+      href="https://www.hu-berlin.de/en"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Humboldt University in Berlin"
+      class="hu flex items-center justify-center"
+      ><img
+        src={huberlin}
+        alt="Humboldt University in Berlin"
+        class="max-w-36"
+      /></a
+    >
+    <a
+      href="https://www.pik-potsdam.de/en"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Potsdam Institute for Climate Impact Research"
+      class="flex items-center justify-center"
+      ><img
+        src={pik}
+        alt="Potsdam Institute for Climate Impact Research"
+        class="max-w-36"
+      /></a
+    >
+    <a
+      href="https://www.savethechildren.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Save the Children"
+      class="flex items-center justify-center"
+      ><img
+        src={stc}
+        alt="Save the Children"
+        class="max-w-36"
+      /></a
+    >
   </div>
-  <p>{$t('content.VUB_INTEREST')} <a href="https://www.vub.be/en/programmes" target="_blank" rel="noopener noreferrer">{$t('content.VUB_INTEREST_LINK')}</a></p>
+  <p>
+    {$t('content.VUB_INTEREST')}
+    <a
+      href="https://www.vub.be/en/programmes"
+      target="_blank"
+      rel="noopener noreferrer">{$t('content.VUB_INTEREST_LINK')}</a
+    >
+  </p>
 </footer>
 
 <style lang="scss">
