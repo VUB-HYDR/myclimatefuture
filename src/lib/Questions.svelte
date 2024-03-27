@@ -6,6 +6,7 @@
   import Info from './Icons/Info.svelte';
   import Slide from './Slider/Slide.svelte';
   import H2 from '$lib/ui/H2.svelte';
+  import Selection from '$lib/Questions/Selection.svelte';
 
   import { DEFAULT_REGION, DEFAULT_TEMPERATURE, KEYS_REGIONS, LAST_YEAR, NUMBER_OF_YEARS, TEMPERATURES, TEMPERATURES_LABELS } from '$config';
   import { CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, CURRENT_YEAR_SLIDER } from '$store';
@@ -20,56 +21,49 @@
   $: listRegions = KEYS_REGIONS.map((key, i) => {
     const isWorld = i === 0;
     return {
-      value: i,
-      checked: i === DEFAULT_REGION,
-      region: $t(`content.${key}`),
-      countries: isWorld ? false : $t(`content.${key}_COUNTRIES`),
+      value: String(i),
+      label: $t(`content.${key}`),
+      details: isWorld ? false : $t(`content.${key}_COUNTRIES`),
       title: isWorld ? $t('content.LOCATION_BUTTON_WORLD') : $t('content.LOCATION_BUTTON_REGION', { region: $t(`content.${key}`) }),
-      name: `region_${i}`,
+      isBigText: i == 0,
     };
   });
 
   $: listTemperatures = TEMPERATURES.map((temperature, i) => {
     return {
-      value: i,
-      checked: i === DEFAULT_TEMPERATURE,
+      value: String(i),
       label: $t(`content.${TEMPERATURES_LABELS[i]}`),
       details: $t(`content.${TEMPERATURES_LABELS[i]}_DESCRIPTION`),
       title: $t(`content.${TEMPERATURES_LABELS[i]}_BUTTON`),
-      name: `temperature_${i}`,
+      isBigText: i == 0,
     };
   });
 </script>
 
 <section class="input column">
   <div>
-    <H2 emoji={ageEmoji} slot="labelText">{$t('content.QUESTION_AGE')}</H2>
-    <Slide value={CURRENT_YEAR_SLIDER} min={LAST_YEAR - NUMBER_OF_YEARS} max={LAST_YEAR} />
+    <H2
+      emoji={ageEmoji}
+      slot="labelText">{$t('content.QUESTION_AGE')}</H2
+    >
+    <Slide
+      value={CURRENT_YEAR_SLIDER}
+      min={LAST_YEAR - NUMBER_OF_YEARS}
+      max={LAST_YEAR}
+    />
   </div>
-  <ButtonGroup bind:selected={$CURRENT_TEMPERATURE_INDEX}>
-    <H2 emoji="🌡️" slot="legend">{$t('content.QUESTION_SCENARIO')}</H2>
-    <div class="grid-third" slot="options">
-      {#each listTemperatures as { value, checked, label, details, title, name }}
-        <RadioButton {value} {checked} buttonDescription={title} {name}>
-          <span class="button_title">{label}</span>
-          <Info title={details} />
-        </RadioButton>
-      {/each}
-    </div>
-  </ButtonGroup>
-  <ButtonGroup legend="Where are you from?" bind:selected={$CURRENT_REGION_INDEX}>
-    <H2 emoji="🗺️" slot="legend">{$t('content.QUESTION_LOCATION')}</H2>
-    <div class="grid-third" slot="options">
-      {#each listRegions as { value, checked, region, countries, title, name }}
-        <RadioButton {value} {checked} buttonDescription={title} {name}>
-          <span class:button_title={value === 0} class:button_title--small={value > 0}>{region}</span>
-          {#if countries}
-            <Info title={countries} />
-          {/if}
-        </RadioButton>
-      {/each}
-    </div>
-  </ButtonGroup>
+  <Selection
+    options={listTemperatures}
+    question={$t('content.QUESTION_SCENARIO')}
+    emoji="🌡️"
+    store={CURRENT_TEMPERATURE_INDEX}
+  />
+  <Selection
+    options={listRegions}
+    question={$t('content.QUESTION_LOCATION')}
+    emoji="🗺️"
+    store={CURRENT_REGION_INDEX}
+  />
 </section>
 
 <style lang="scss">
