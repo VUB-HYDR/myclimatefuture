@@ -30,10 +30,11 @@
       {@const isChecked = $isChecked(value)}
       <button
         use:melt={$item(value)}
-        class="flex aria-checked:text-white items-center justify-center relative px-4 py-3 transition-colors cursor-default rounded-md place-items-center border border-primary-light bg-white"
+        class="flex aria-checked:text-white items-center justify-center relative px-4 py-3 transition-colors cursor-default rounded-md place-items-center border border-primary-light"
         class:hover:border-primary={!isChecked}
-        class:bg-[--color-accent]={isChecked}
-        class:border-[--color-accent]={isChecked}
+        class:bg-accent={isChecked}
+        class:bg-white={!isChecked}
+        class:border-accent={isChecked}
         aria-label={title}
         class:relative={Boolean(details)}
         {title}
