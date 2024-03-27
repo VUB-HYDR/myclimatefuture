@@ -64,7 +64,10 @@
             class:border-t={i !== 0}
             class:border-t-neutral-300={i !== 0}
           >
-            <span itemprop="name">{question}</span>
+            <span
+              itemprop="name"
+              class="text-left pr-6">{question}</span
+            >
             <div
               class="transition-transform"
               class:rotate-180={$isSelected(id)}
