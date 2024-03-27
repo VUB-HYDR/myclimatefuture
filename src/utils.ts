@@ -1,4 +1,4 @@
-import { EMOJI_AGES } from '$config';
+import { EMOJI_AGES, URL_BASE } from '$config';
 import { get } from 'lodash-es';
 
 export function getValue(data, region: number, risk: number, temperature: number, age: number) {
@@ -68,3 +68,24 @@ export const replaceLocaleInUrl = (url: string, locale: string, full: boolean = 
   newUrl.pathname = new_pathname;
   return newUrl.toString();
 };
+
+function generateLocaleURL(locale: string) {
+  let base = new URL(URL_BASE);
+  if (locale !== 'en') {
+    base = new URL(locale, URL_BASE);
+  }
+  return {
+    href: base.toString(),
+    label: `${base.host}${base.pathname}`,
+  };
+}
+
+const LOCALE_URLS = Object.fromEntries(
+  locales.map((lang) => {
+    return [lang, generateLocaleURL(lang)];
+  })
+);
+
+export function getLocaleURL(locale: string) {
+  return get(LOCALE_URLS, locale, generateLocaleURL(locale));
+}

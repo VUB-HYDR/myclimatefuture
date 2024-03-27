@@ -1,7 +1,8 @@
 <script>
   import { PAGE_NAME } from '$config';
   import { LOCALE_URL } from '$store';
-  import { t, locale } from '$lib/translations';
+  import { t, locale, locales } from '$lib/translations';
+  import { getLocaleURL } from '$utils';
   import About from '$lib/About.svelte';
   import AspectRatio from '$lib/AspectRatio/AspectRatio.svelte';
   import DownloadButton from '$lib/DownloadButton/DownloadButton.svelte';
@@ -42,6 +43,10 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href={$LOCALE_URL.href} />
+
+  {#each $locales as lang}
+    <link rel="alternate" hreflang={lang === 'en' ? 'x-default' : lang} href={getLocaleURL(lang).href} />
+  {/each}
 </svelte:head>
 
 <Head />

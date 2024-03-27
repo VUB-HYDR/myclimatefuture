@@ -1,7 +1,7 @@
-import { URL_BASE, ASPECT_RATIOS, DEFAULT_AGE, DEFAULT_ASPECT_RATIO, DEFAULT_REGION, DEFAULT_TEMPERATURE, DOWNLOAD_IMAGE_PREFIX, KEYS_REGIONS, LAST_YEAR, RISKS, RISKS_LABELS, TEMPERATURES } from '$config';
+import { ASPECT_RATIOS, DEFAULT_AGE, DEFAULT_ASPECT_RATIO, DEFAULT_REGION, DEFAULT_TEMPERATURE, DOWNLOAD_IMAGE_PREFIX, KEYS_REGIONS, LAST_YEAR, RISKS, RISKS_LABELS, TEMPERATURES } from '$config';
 import data from '$lib/data/data.json';
 import { t, locale } from '$lib/translations';
-import { getValue } from '$utils';
+import { getValue, getLocaleURL } from '$utils';
 import { get, snakeCase } from 'lodash-es';
 import { derived, writable } from 'svelte/store';
 import { formatLocale } from 'd3-format';
@@ -26,16 +26,7 @@ const locales = {
 
 export const FORMAT_LOCALE = derived(locale, ($locale) => get(locales, $locale, en));
 export const FORMAT_NUMBER = derived(FORMAT_LOCALE, ($locale) => formatLocale($locale).format('.1f'));
-export const LOCALE_URL = derived(locale, ($locale) => {
-  let base = new URL(URL_BASE);
-  if ($locale !== 'en') {
-    base = new URL($locale, URL_BASE);
-  }
-  return {
-    href: base.toString(),
-    label: `${base.host}${base.pathname}`,
-  };
-});
+export const LOCALE_URL = derived(locale, ($locale) => getLocaleURL($locale));
 
 export const CURRENT_YEAR_SLIDER = writable([LAST_YEAR - DEFAULT_AGE]);
 export const CURRENT_YEAR = derived(CURRENT_YEAR_SLIDER, ($years) => $years[0]);
