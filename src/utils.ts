@@ -1,6 +1,6 @@
 import { EMOJI_AGES, URL_BASE } from '$config';
 import { config as translations } from '$lib/translations';
-import { get } from 'lodash-es';
+import { get, trimEnd } from 'lodash-es';
 
 export function getValue(data, region: number, risk: number, temperature: number, age: number) {
   return get(data, [region, risk, temperature, age], 0);
@@ -77,7 +77,7 @@ function generateLocaleURL(locale: string) {
   }
   return {
     href: base.toString(),
-    label: `${base.host}${base.pathname}`,
+    label: trimEnd(`${base.host}${base.pathname}`, '/'),
   };
 }
 
