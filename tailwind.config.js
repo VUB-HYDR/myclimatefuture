@@ -8,10 +8,10 @@ export default {
     extend: {
       colors: {
         accent: {
-          DEFAULT: '#e07a5f',
-          0: '#e07a5f',
-          1: '#d06355',
-          2: '#bc4749',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          0: 'rgb(var(--color-accent-0) / <alpha-value>)',
+          1: 'rgb(var(--color-accent-1) / <alpha-value>)',
+          2: 'rgb(var(--color-accent-2) / <alpha-value>)',
           light: '#f9efed',
           border: '#f5c82f',
           background: '#f9f0c5',

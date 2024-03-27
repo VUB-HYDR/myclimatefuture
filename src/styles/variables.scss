@@ -6,10 +6,10 @@
   --tertiary-color: #e0e0e0;
   // We use Chroma.js here to generate a correct color scale
   // chroma.scale(['#e07a5f', '#bc4749']).domain([1.5,3.5])(2.4)
-  --color-accent: #e07a5f;
-  --color-accent-0: var(--color-accent);
-  --color-accent-1: #d06355;
-  --color-accent-2: #bc4749;
+  --color-accent: 224 122 95;
+  --color-accent-0: 224 122 95;
+  --color-accent-1: 208 99 84;
+  --color-accent-2: 188 71 73;
   --color-accent-light: #f9efed;
   --color-info-border: #f5c82f;
   --color-info-background: #f9f0c5;
