@@ -1,7 +1,7 @@
 <script>
   import { ID_GRAPH, RISKS_LABELS } from '$config';
   import { t } from '$lib/translations';
-  import { CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
+  import { LOCALE_URL, CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
   import { splitIntoEvenChunks } from '$utils';
   import { scaleBand, scaleLinear } from 'd3-scale';
   import { capitalize } from 'lodash-es';
@@ -100,7 +100,7 @@
       <p>{@html text}</p>
     </div>
     <div class="graph-footer">
-      <span>{$t('content.GRAPHIC_LINK')}</span>
+      <span>{$t('content.GRAPHIC_LINK', { link: $LOCALE_URL.label })}</span>
     </div>
     <svg
       viewBox={`0 0 ${$CURRENT_VIS_WIDTH} ${$CURRENT_VIS_HEIGHT}`}

@@ -76,7 +76,7 @@
   "BUTTON_DOWNLOAD": "下载图片",
   "BUTTON_DOWNLOAD_TITLE": "将图表下载为 PNG 图像",
   "BUTTON_COPY": "单击将此文本复制到剪贴板",
-  "GRAPHIC_LINK": "了解您的气候未来，请访问 myclimatefuture.info",
+  "GRAPHIC_LINK": "了解您的气候未来，请访问 {{link}}",
   "GRAPHIC_DESCRIPTION": "该图显示了六个条形图，显示了所选年龄、气候变暖情景和地区的野火、洪涝灾害、粮食歉收、热带飓风、干旱和高温热浪的增加情况。",
   "VUB_INTEREST": "有兴趣研究气候问题及其解决方案？",
   "VUB_INTEREST_LINK": "了解我们在 VUB 开设的课程。",

@@ -76,7 +76,7 @@
   "BUTTON_DOWNLOAD": "Afbeelding downloaden",
   "BUTTON_DOWNLOAD_TITLE": "Download afbeelding in PNG-formaat",
   "BUTTON_COPY": "Klik om deze tekst naar het klembord te kopiëren",
-  "GRAPHIC_LINK": "Ontdek uw klimaattoekomst op myclimatefuture.info",
+  "GRAPHIC_LINK": "Ontdek uw klimaattoekomst op {{link}}",
   "GRAPHIC_DESCRIPTION": "Deze grafiek toont zes balken die de toename van bosbranden, rivieroverstromingen, mislukte oogsten, tropische cyclonen, droogtes en hittegolven voor de geselecteerde leeftijd, opwarmingsscenario en regio weergeven.",
   "VUB_INTEREST": "Geïnteresseerd in het bestuderen van het klimaatprobleem en de oplossingen ervan?",
   "VUB_INTEREST_LINK": "Bekijk onze opleidingen aan de VUB.",

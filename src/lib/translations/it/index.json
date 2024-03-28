@@ -76,7 +76,7 @@
   "BUTTON_DOWNLOAD": "Scarica immagine",
   "BUTTON_DOWNLOAD_TITLE": "Scarica il grafico come immagine PNG",
   "BUTTON_COPY": "Fai clic per copiare questo testo negli appunti",
-  "GRAPHIC_LINK": "Scopri il tuo futuro climatico su myclimatefuture.info",
+  "GRAPHIC_LINK": "Scopri il tuo futuro climatico su {{link}}",
   "GRAPHIC_DESCRIPTION": "Questo grafico mostra sei barre che indicano l'aumento di incendi, inondazioni fluviali, cattivi raccolti, cicloni tropicali, siccità e ondate di calore per l'età selezionata, lo scenario di riscaldamento e la regione.",
   "VUB_INTEREST": "Sei interessato/a a studiare il problema climatico e le sue soluzioni?",
   "VUB_INTEREST_LINK": "Dai un'occhiata ai nostri corsi di studio alla VUB.",

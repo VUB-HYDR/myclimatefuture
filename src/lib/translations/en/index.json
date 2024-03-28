@@ -76,7 +76,7 @@
   "BUTTON_DOWNLOAD": "Download image",
   "BUTTON_DOWNLOAD_TITLE": "Download graph as PNG image",
   "BUTTON_COPY": "Click to copy this text to your clipboard",
-  "GRAPHIC_LINK": "Find out your climate future at myclimatefuture.info",
+  "GRAPHIC_LINK": "Find out your climate future at {{link}}",
   "GRAPHIC_DESCRIPTION": "This graph displays six bars that show the increase of wildfires, river floods, crop failures, tropical cyclones, droughts and heatwaves for the selected age, warming scenario and region.",
   "VUB_INTEREST": "Interested in studying the climate problem and its solutions?",
   "VUB_INTEREST_LINK": "Take a look at our courses at VUB.",
