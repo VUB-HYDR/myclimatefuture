@@ -72,12 +72,15 @@ export const replaceLocaleInUrl = (url: string, locale: string, full: boolean = 
 
 function generateLocaleURL(locale: string) {
   let base = new URL(URL_BASE);
+  let preview = new URL('preview.png', URL_BASE);
   if (locale !== 'en') {
     base = new URL(locale, URL_BASE);
+    preview = new URL(`preview-${locale}.png`, URL_BASE);
   }
   return {
     href: base.toString(),
     label: trimEnd(`${base.host}${base.pathname}`, '/'),
+    preview: preview.toString(),
   };
 }
 

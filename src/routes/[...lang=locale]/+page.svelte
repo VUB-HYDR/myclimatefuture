@@ -20,32 +20,106 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content={description} />
-  <meta property="og:site_name" content={PAGE_NAME} />
-  <meta property="og:locale" content={$locale} />
-  <meta property="og:url" content={$LOCALE_URL.href} />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={`${$LOCALE_URL.href}/preview.png`} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
-  <meta property="og:image:alt" content={$t('content.PREVIEW_DESCRIPTION')} />
-  <meta property="og:updated_time" content={new Date().toString()} />
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content={`${$LOCALE_URL.href}/preview.png`} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="canonical" href={$LOCALE_URL.href} />
+  <meta
+    name="robots"
+    content="index,follow"
+  />
+  <meta
+    name="description"
+    content={description}
+  />
+  <meta
+    property="og:site_name"
+    content={PAGE_NAME}
+  />
+  <meta
+    property="og:locale"
+    content={$locale}
+  />
+  <meta
+    property="og:url"
+    content={$LOCALE_URL.href}
+  />
+  <meta
+    property="og:type"
+    content="website"
+  />
+  <meta
+    property="og:title"
+    content={title}
+  />
+  <meta
+    property="og:description"
+    content={description}
+  />
+  <meta
+    property="og:image"
+    content={$LOCALE_URL.preview}
+  />
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+  <meta
+    property="og:image:height"
+    content="600"
+  />
+  <meta
+    property="og:image:alt"
+    content={$t('content.PREVIEW_DESCRIPTION')}
+  />
+  <meta
+    property="og:updated_time"
+    content={new Date().toString()}
+  />
+  <meta
+    itemprop="name"
+    content={title}
+  />
+  <meta
+    itemprop="description"
+    content={description}
+  />
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+  <meta
+    name="twitter:image"
+    content={$LOCALE_URL.preview}
+  />
+  <meta
+    name="twitter:title"
+    content={title}
+  />
+  <meta
+    name="twitter:description"
+    content={description}
+  />
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  />
+  <link
+    rel="manifest"
+    href="/site.webmanifest"
+  />
+  <link
+    rel="canonical"
+    href={$LOCALE_URL.href}
+  />
 
   {#each $locales as lang}
-    <link rel="alternate" hreflang={lang === 'en' ? 'x-default' : lang} href={getLocaleURL(lang).href} />
+    <link
+      rel="alternate"
+      hreflang={lang === 'en' ? 'x-default' : lang}
+      href={getLocaleURL(lang).href}
+    />
   {/each}
 </svelte:head>
 
