@@ -16,4 +16,8 @@
       @apply text-primary decoration-gray-600;
     }
   }
+
+  strong {
+    @apply text-accent transition-colors;
+  }
 }

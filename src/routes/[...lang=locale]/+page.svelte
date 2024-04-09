@@ -20,38 +20,116 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content={description} />
-  <meta property="og:site_name" content={PAGE_NAME} />
-  <meta property="og:locale" content={$locale} />
-  <meta property="og:url" content={$LOCALE_URL.href} />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={$LOCALE_URL.preview} />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="600" />
-  <meta property="og:image:alt" content={$t('content.PREVIEW_DESCRIPTION')} />
-  <meta property="og:updated_time" content={new Date().toString()} />
-  <meta itemprop="name" content={title} />
-  <meta itemprop="description" content={description} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content={$LOCALE_URL.preview} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <link rel="icon" href="/favicon.ico" sizes="48x48" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
-  <link rel="icon" href="/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-  <link rel="canonical" href={$LOCALE_URL.href} />
+  <meta
+    name="robots"
+    content="index,follow"
+  />
+  <meta
+    name="description"
+    content={description}
+  />
+  <meta
+    property="og:site_name"
+    content={PAGE_NAME}
+  />
+  <meta
+    property="og:locale"
+    content={$locale}
+  />
+  <meta
+    property="og:url"
+    content={$LOCALE_URL.href}
+  />
+  <meta
+    property="og:type"
+    content="website"
+  />
+  <meta
+    property="og:title"
+    content={title}
+  />
+  <meta
+    property="og:description"
+    content={description}
+  />
+  <meta
+    property="og:image"
+    content={$LOCALE_URL.preview}
+  />
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+  <meta
+    property="og:image:height"
+    content="600"
+  />
+  <meta
+    property="og:image:alt"
+    content={$t('content.PREVIEW_DESCRIPTION')}
+  />
+  <meta
+    property="og:updated_time"
+    content={new Date().toString()}
+  />
+  <meta
+    itemprop="name"
+    content={title}
+  />
+  <meta
+    itemprop="description"
+    content={description}
+  />
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+  <meta
+    name="twitter:image"
+    content={$LOCALE_URL.preview}
+  />
+  <meta
+    name="twitter:title"
+    content={title}
+  />
+  <meta
+    name="twitter:description"
+    content={description}
+  />
+  <link
+    rel="icon"
+    href="/favicon.ico"
+    sizes="48x48"
+  />
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+    media="(prefers-color-scheme: light)"
+  />
+  <link
+    rel="icon"
+    href="/favicon-dark.svg"
+    type="image/svg+xml"
+    media="(prefers-color-scheme: dark)"
+  />
+  <link
+    rel="canonical"
+    href={$LOCALE_URL.href}
+  />
   {#each $locales as lang}
-    <link rel="alternate" hreflang={lang === 'en' ? 'x-default' : lang} href={getLocaleURL(lang).href} />
+    <link
+      rel="alternate"
+      hreflang={lang === 'en' ? 'x-default' : lang}
+      href={getLocaleURL(lang).href}
+    />
   {/each}
 </svelte:head>
 
 <Head />
-<div class="generator">
+<div class="grid lg:grid-cols-2 content-start justify-center items-center w-full gap-8 md:gap-14">
   <Questions />
-  <section class="output column">
+  <section class="grid gap-y-8 lg:grid-cols-3 lg:gap-y-14 column">
     <Text />
     <SocialButtons />
     <Vis />
@@ -63,37 +141,3 @@
 <FAQ />
 <About />
 <Footer />
-
-<style lang="scss">
-  @import '$styles/global.scss';
-
-  .generator {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    align-content: start;
-    grid-row-gap: var(--size-vertical-outer-gap);
-    justify-content: center;
-    justify-items: center;
-    width: 100%;
-
-    @include query($medium) {
-      grid-column-gap: var(--size-vertical-inner-gap);
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include query($wide) {
-      grid-column-gap: var(--size-vertical-outer-gap);
-    }
-  }
-
-  .output {
-    display: grid;
-    grid-row-gap: var(--size-vertical-inner-gap);
-
-    @include query($medium) {
-      @include sticky-grid();
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: var(--size-vertical-outer-gap);
-    }
-  }
-</style>

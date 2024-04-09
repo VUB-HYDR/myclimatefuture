@@ -33,14 +33,6 @@ $max-width-column: 570px;
   }
 }
 
-@mixin sticky-grid() {
-  display: grid;
-  align-content: start;
-  position: sticky;
-  top: 0;
-  align-self: start;
-}
-
 @mixin query($device) {
   @media screen and (min-width: $device) {
     @content;

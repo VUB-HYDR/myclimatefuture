@@ -2,6 +2,10 @@
 @import './global';
 @import './fonts';
 
+html {
+  font-size: 93.8%;
+}
+
 body {
   min-height: 100vh;
   color: var(--primary-color);
@@ -9,7 +13,7 @@ body {
 }
 
 .wrapper {
-  @apply max-w-6xl mx-auto w-full box-border p-0 px-2 sm:px-4 md:px-8;
+  @apply max-w-7xl mx-auto w-full box-border p-0 px-2 sm:px-4 md:px-8;
 }
 
 em {
@@ -118,11 +122,6 @@ em,
 .button_title,
 .button_title--small {
   font-weight: var(--weight-bold);
-}
-
-strong {
-  transition: color var(--transition);
-  color: var(--color-accent);
 }
 
 .grid-half {

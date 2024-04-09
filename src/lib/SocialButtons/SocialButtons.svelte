@@ -1,7 +1,7 @@
 <script>
   import { HASHTAG, PAGE_NAME, RISKS_EMOJIES } from '$config';
   import { t } from '$lib/translations';
-  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES, LOCALE_URL } from '$store';
+  import { CURRENT_AGE, CURRENT_REGION, CURRENT_REGION_INDEX_NUMBER, CURRENT_REGION_SHORT, CURRENT_TEMPERATURE, LABELS_RISKS, VALUES, LOCALE_URL } from '$store';
   import Facebook from '../Icons/Facebook.svelte';
   import Mail from '../Icons/Mail.svelte';
   import Telegram from '../Icons/Telegram.svelte';
@@ -11,8 +11,8 @@
   $: params = { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE };
   $: params_short = { ...params, region: $CURRENT_REGION_SHORT };
   $: params_long = { ...params, region: $CURRENT_REGION };
-  $: text_start_short = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_short) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
-  $: text_start_long = $CURRENT_REGION_INDEX > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_long) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
+  $: text_start_short = $CURRENT_REGION_INDEX_NUMBER > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_short) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
+  $: text_start_long = $CURRENT_REGION_INDEX_NUMBER > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_long) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
   $: text_and = $t('content.GRAPHIC_TEXT_2');
   $: text_end = $t('content.GRAPHIC_TEXT_3');
   $: text_url = $t('content.GRAPHIC_TEXT_4');
@@ -64,11 +64,45 @@
 
 <div class="page-social-buttons">
   <ul>
-    <li><a href={tw} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_TWITTER')}><Twitter /></a></li>
-    <li><a href={fb} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_FACEBOOK')}><Facebook /></a></li>
-    <li><a href={tg} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_TELEGRAM')}><Telegram /></a></li>
-    <li><a href={wa} target="_blank" rel="noopener noreferrer" title={$t('content.SHARE_WHATSAPP')}><WhatsApp /></a></li>
-    <li><a href={mail} rel="noopener noreferrer" title={$t('content.SHARE_MAIL')}><Mail /></a></li>
+    <li>
+      <a
+        href={tw}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={$t('content.SHARE_TWITTER')}><Twitter /></a
+      >
+    </li>
+    <li>
+      <a
+        href={fb}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={$t('content.SHARE_FACEBOOK')}><Facebook /></a
+      >
+    </li>
+    <li>
+      <a
+        href={tg}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={$t('content.SHARE_TELEGRAM')}><Telegram /></a
+      >
+    </li>
+    <li>
+      <a
+        href={wa}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={$t('content.SHARE_WHATSAPP')}><WhatsApp /></a
+      >
+    </li>
+    <li>
+      <a
+        href={mail}
+        rel="noopener noreferrer"
+        title={$t('content.SHARE_MAIL')}><Mail /></a
+      >
+    </li>
   </ul>
 </div>
 

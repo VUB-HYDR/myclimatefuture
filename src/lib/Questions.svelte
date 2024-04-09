@@ -32,7 +32,7 @@
   });
 </script>
 
-<section class="input column">
+<section class="grid gap-y-14 lg:content-start lg:self-start lg:sticky lg:top-0 column">
   <div>
     <H2
       emoji={ageEmoji}
@@ -57,16 +57,3 @@
     store={CURRENT_REGION_INDEX}
   />
 </section>
-
-<style lang="scss">
-  @import '../styles/global.scss';
-
-  .input {
-    display: grid;
-    grid-row-gap: var(--size-vertical-outer-gap);
-
-    @include query($medium) {
-      @include sticky-grid();
-    }
-  }
-</style>

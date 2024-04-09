@@ -32,6 +32,7 @@ export const CURRENT_YEAR_SLIDER = writable([LAST_YEAR - DEFAULT_AGE]);
 export const CURRENT_YEAR = derived(CURRENT_YEAR_SLIDER, ($years) => $years[0]);
 export const CURRENT_AGE = derived(CURRENT_YEAR, ($year) => new Date().getFullYear() - $year);
 export const CURRENT_REGION_INDEX = writable(DEFAULT_REGION);
+export const CURRENT_REGION_INDEX_NUMBER = derived(CURRENT_REGION_INDEX, ($index) => parseInt($index));
 export const CURRENT_TEMPERATURE_INDEX = writable(DEFAULT_TEMPERATURE);
 
 export const VALUES = derived([CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, FORMAT_NUMBER], ([$age, $region, $temperature, $format]) => {
@@ -49,7 +50,8 @@ export const CURRENT_REGION_SHORT = derived([CURRENT_REGION_INDEX, t], ([$index,
 export const LABELS_RISKS = derived(t, ($t) => RISKS_LABELS.map((key) => $t(`content.${key}`)));
 
 export const CURRENT_ASPECT_RATIO_INDEX = writable(DEFAULT_ASPECT_RATIO);
-export const CURRENT_ASPECT_RATIO = derived(CURRENT_ASPECT_RATIO_INDEX, ($index) => get(ASPECT_RATIOS, $index, [1, 1, '']));
+export const CURRENT_ASPECT_RATIO_INDEX_NUMBER = derived(CURRENT_ASPECT_RATIO_INDEX, ($index) => parseInt($index));
+export const CURRENT_ASPECT_RATIO = derived(CURRENT_ASPECT_RATIO_INDEX, ($index) => get(ASPECT_RATIOS, $index, [16, 9, 'horizontal']));
 
 export const IMAGE_FILE_NAME = derived([CURRENT_AGE, CURRENT_TEMPERATURE, CURRENT_REGION_SHORT, CURRENT_ASPECT_RATIO], ([$age, $temperature, $region, $ratio]) => {
   return snakeCase(`${DOWNLOAD_IMAGE_PREFIX}-${$age}-${$temperature}-${$region}-${$ratio[2]}`) + '.png';
