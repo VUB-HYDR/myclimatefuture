@@ -1,14 +1,14 @@
 <script>
-  import { LOCALE_URL, CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
+  import { LABELS_RISKS } from '$store';
   import { getContext } from 'svelte';
   import { splitIntoEvenChunks } from '$utils';
   import { capitalize } from 'lodash-es';
 
-  const { data, xGet, yGet, xScale, yScale, width, y, yRange, xRange } = getContext('LayerCake');
+  const { data, xGet, yGet, xScale, width, y, yRange, xRange } = getContext('LayerCake');
 
   $: barWidth = $xScale.bandwidth();
 
-  $: labels = $LABELS_RISKS.map((label, index) => splitIntoEvenChunks(capitalize(label), 2));
+  $: labels = $LABELS_RISKS.map((label) => splitIntoEvenChunks(capitalize(label), 2));
 
   $: columnHeight = (d) => {
     return $yRange[0] - $yGet(d);
