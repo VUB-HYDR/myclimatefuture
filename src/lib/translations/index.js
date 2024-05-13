@@ -9,8 +9,8 @@ export const config = {
     it: { lang },
     nl: { lang },
     cn: { lang },
-    // de: { lang },
-    // es: { lang },
+    de: { lang },
+    es: { lang },
   },
   loaders: [
     {
@@ -38,16 +38,16 @@ export const config = {
       key: 'content',
       loader: async () => (await import('./cn/index.json')).default,
     },
-    // {
-    //   locale: 'de',
-    //   key: 'content',
-    //   loader: async () => (await import('./de/index.json')).default,
-    // },
-    // {
-    //   locale: 'es',
-    //   key: 'content',
-    //   loader: async () => (await import('./es/index.json')).default,
-    // },
+    {
+      locale: 'de',
+      key: 'content',
+      loader: async () => (await import('./de/index.json')).default,
+    },
+    {
+      locale: 'es',
+      key: 'content',
+      loader: async () => (await import('./es/index.json')).default,
+    },
   ],
 };
 
