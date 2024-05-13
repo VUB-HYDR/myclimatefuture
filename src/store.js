@@ -46,7 +46,6 @@ export const CURRENT_TEMPERATURE = derived(CURRENT_TEMPERATURE_INDEX, ($index) =
 export const CURRENT_TEMPERATURE_STRING = derived([CURRENT_TEMPERATURE, FORMAT_NUMBER], ([$value, $format]) => $format($value));
 export const CURRENT_REGION = derived([CURRENT_REGION_INDEX, t], ([$index, $t]) => $t(`content.${KEYS_REGIONS[$index]}`));
 export const CURRENT_REGION_SHORT = derived([CURRENT_REGION_INDEX, t], ([$index, $t]) => $t(`content.${KEYS_REGIONS[$index]}_SHORT`));
-// export const LABELS_RISKS = writable(RISKS_LABELS);
 export const LABELS_RISKS = derived(t, ($t) => RISKS_LABELS.map((key) => $t(`content.${key}`)));
 
 export const CURRENT_ASPECT_RATIO_INDEX = writable(DEFAULT_ASPECT_RATIO);
