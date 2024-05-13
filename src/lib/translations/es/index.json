@@ -90,12 +90,12 @@
   "TYPE_DROUGHTS": "Sequías",
   "TYPE_HEATWAVES": "Olas de calor",
   "GRAPHIC_TEXT_1": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{edad}} de edad</strong>, experimentaré",
-  "GRAPHIC_TEXT_1_REGION": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age;8:an; 11:an; 18:an; default:a ;}} <strong>{edad}}años</strong> de <strong>{región}}</strong>, experimentaré",
+  "GRAPHIC_TEXT_1_REGION": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age;8:an; 11:an; 18:an; default:a ;}} <strong>{{edad}}años</strong> de <strong>{{región}}</strong>, experimentaré",
   "GRAPHIC_TEXT_1_CLEAN": "En un {{temp}} ℃ mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}} {{edad}} de edad, experimentaré",
-  "GRAPHIC_TEXT_1_REGION_CLEAN": "En un {{temp}} ℃ mundo, yo, como {{age;8:an; 11:an; 18:an; default:a ;}} {edad}}años de {región}}, experimentaré",
+  "GRAPHIC_TEXT_1_REGION_CLEAN": "En un {{temp}} ℃ mundo, yo, como {{age;8:an; 11:an; 18:an; default:a ;}} {{edad}}años de {{región}}, experimentaré",
   "GRAPHIC_TEXT_2": "y",
   "GRAPHIC_TEXT_3": "más que sin cambio climático.",
   "GRAPHIC_TEXT_4": "Haz la prueba",
-  "GRAPHIC_GRAPHIC_TEXT": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}}} <strong>{{edad}} de edad</strong>, experimentaré estos incrementos",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}}} <strong>{edad}} años</strong> de <strong>{región}}</strong>, experimentaré estos incrementos"
+  "GRAPHIC_GRAPHIC_TEXT": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{edad}} de edad</strong>, experimentaré estos incrementos",
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "En un <strong>{{temp}} ℃</strong> mundo, yo, como {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{edad}} años</strong> de <strong>{{región}}</strong>, experimentaré estos incrementos"
 }
