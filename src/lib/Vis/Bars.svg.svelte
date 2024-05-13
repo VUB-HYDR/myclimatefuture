@@ -2,13 +2,16 @@
   import { LABELS_RISKS } from '$store';
   import { getContext } from 'svelte';
   import { splitIntoEvenChunks } from '$utils';
-  import { capitalize } from 'lodash-es';
 
   const { data, xGet, yGet, xScale, width, y, yRange, xRange } = getContext('LayerCake');
 
   $: barWidth = $xScale.bandwidth();
 
-  $: labels = $LABELS_RISKS.map((label) => splitIntoEvenChunks(capitalize(label), 2));
+  function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  $: labels = $LABELS_RISKS.map((label) => splitIntoEvenChunks(capitalizeFirstLetter(label), 2));
 
   $: columnHeight = (d) => {
     return $yRange[0] - $yGet(d);
