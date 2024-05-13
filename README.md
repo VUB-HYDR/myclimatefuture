@@ -13,6 +13,7 @@ This website is build with [SvelteKit](https://kit.svelte.dev/), [Layercake](htt
 - `/src/lib/` has all the components in it.
 - `/data/` holds a [Jupyter Notebook](https://jupyter.org/) written in [Julia](https://julialang.org/) to convert the data from the CSV files to a single JSON file.
 - The website loads the data from `/src/data/data.json`.
+- Translations are stored in `/src/lib/translations`.
 
 ## Developing
 
@@ -25,3 +26,15 @@ bun run dev
 ```bash
 bun run build
 ```
+
+## Adding new languages
+
+```bash
+make get_translations
+```
+
+1. Add language specific number formatting in `src/store.js`. Import formatting rules and use in `locales` object.
+2. Add language in `src/lib/translations/index.js` in `config.languages` and `config.loaders`.
+3. Add `static/preciew-<lang>.png`
+
+Note: `[i18n]: 'cn' locale is non-standard.` is a warning from `svelte-i18n` and can be ignored.
