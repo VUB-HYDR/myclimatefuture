@@ -176,6 +176,7 @@ function processSingleObject(obj, defaultTranslation) {
   const arr = CONTENT_KEYS.map(([keySource, keyTarget, { usePlainText = true, wrapParagraph = true, sanitizeDom = false } = {}]) => {
     let translation = getRichText(obj, keySource, usePlainText, wrapParagraph, sanitizeDom);
     if (!translation) {
+      console.log(`Missing translation for “${keySource}” in language “${getSlug(obj)}”`);
       translation = getRichText(defaultTranslation, keySource, usePlainText, wrapParagraph, sanitizeDom);
     }
     return [keyTarget, translation];
@@ -191,9 +192,9 @@ function processResults(results) {
 
 async function getTranslations() {
   const content = await fetchNotionDatabase(databaseTranslations);
-  console.log(`Items: ${content.results.length}`);
+  console.log(`Total items: ${content.results.length}`);
   const relevant = processResults(content.results);
-  console.log(`Items: ${relevant.length}`);
+  console.log(`Relevenant items: ${relevant.length}`);
   relevant.map((translation) => {
     const slug = translation[KEY_SLUG];
     const content = JSON.stringify(translation, null, 2);
