@@ -9,7 +9,7 @@
   $: risks = RISKS_LABELS.map((key, i) => {
     return {
       emoji: RISKS_EMOJIES[i],
-      label: $t(`content.${key}`).toLowerCase(),
+      label: $t(`content.${key}`),
       value: $VALUES[i][1] ?? 0,
       comma: i < l ? ',' : '',
       and: i === l ? ` ${and}` : '',
