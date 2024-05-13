@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { ID_GRAPH, RISKS_LABELS } from '$config';
-  import { LOCALE_URL, CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX_NUMBER, CURRENT_REGION, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
+  import { RISKS_LABELS } from '$config';
+  import { CURRENT_ASPECT_RATIO_INDEX_NUMBER, CURRENT_VIS_HEIGHT } from '$store';
   import { LayerCake, Svg } from 'layercake';
 
   import { scaleBand } from 'd3-scale';

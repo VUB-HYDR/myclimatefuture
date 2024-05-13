@@ -1,5 +1,5 @@
 <script>
-  import { ID_GRAPH, RISKS_LABELS } from '$config';
+  import { ID_GRAPH } from '$config';
   import { t } from '$lib/translations';
   import { LOCALE_URL, CURRENT_AGE, CURRENT_ASPECT_RATIO_INDEX_NUMBER, CURRENT_REGION, CURRENT_REGION_INDEX_NUMBER, CURRENT_TEMPERATURE_STRING, CURRENT_VIS_HEIGHT, CURRENT_VIS_WIDTH, CURRENT_ASPECT_RATIO, LABELS_RISKS, VALUES } from '$store';
   import { cubicOut } from 'svelte/easing';
