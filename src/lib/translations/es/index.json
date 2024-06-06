@@ -84,7 +84,7 @@
   "AUTHOR_DESIGN": "Diseño y código del sitio web: {{link}}.",
   "SOURCE_CODE": "Encuentra el código fuente del sitio web en {{link}}.",
   "TYPE_WILDFIRE": "Incendios forestales",
-  "TYPE_RIVER_FLOODS": "Crecidas de ríos (inundaciones, desbordamientos)",
+  "TYPE_RIVER_FLOODS": "Crecidas de ríos",
   "TYPE_CROP_FAILURES": "Malas cosechas",
   "TYPE_TROPICAL_CYCLONES": "Ciclones tropicales",
   "TYPE_DROUGHTS": "Sequías",
