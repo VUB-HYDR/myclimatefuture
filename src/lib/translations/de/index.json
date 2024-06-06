@@ -89,13 +89,13 @@
   "TYPE_TROPICAL_CYCLONES": "tropische Wirbelstürme",
   "TYPE_DROUGHTS": "Dürreperioden",
   "TYPE_HEATWAVES": "Hitzewellen",
-  "GRAPHIC_TEXT_1": "In a <strong>{{temp}} ℃</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong>, will experience",
-  "GRAPHIC_TEXT_1_REGION": "In a <strong>{{temp}} ℃</strong> world, I, as {{age;8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong> from <strong>{{region}}</strong>, will experience",
-  "GRAPHIC_TEXT_1_CLEAN": "In a {{temp}} ℃ world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} {{age}}-year-old, will experience",
-  "GRAPHIC_TEXT_1_REGION_CLEAN": "In a {{temp}} ℃ world, I, as {{age;8:an; 11:an; 18:an; default:a ;}} {{age}}-year-old from {{region}}, will experience",
+  "GRAPHIC_TEXT_1": "In einer <strong>{{temp}} ℃</strong> Welt werde ich als <strong>{{age}}-jähriger</strong> erleben",
+  "GRAPHIC_TEXT_1_REGION": "In einer <strong>{{temp}} ℃</strong> Welt werde ich als <strong>{{age}}-jähriger</strong> aus <strong>{{region}}</strong> erleben",
+  "GRAPHIC_TEXT_1_CLEAN": "In einer {{temp}} ℃ Welt werde ich als {{age}}-jähriger erleben",
+  "GRAPHIC_TEXT_1_REGION_CLEAN": "In einer {{temp}} ℃ Welt werde ich als {{age}}-jähriger aus {{region}} erleben",
   "GRAPHIC_TEXT_2": "und",
   "GRAPHIC_TEXT_3": "mehr als ohne Klimawandel.",
   "GRAPHIC_TEXT_4": "Machen Sie den Test",
-  "GRAPHIC_GRAPHIC_TEXT": "In a <strong>{{temp}} ℃</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong>, will experience these increases",
-  "GRAPHIC_GRAPHIC_TEXT_REGION": "In a <strong>{{temp}} ℃</strong> world, I, as {{age; 8:an; 11:an; 18:an; default:a ;}} <strong>{{age}}-year-old</strong> from <strong>{{region}}</strong>, will experience these increases"
+  "GRAPHIC_GRAPHIC_TEXT": "In einer <strong>{{temp}} ℃</strong> Welt werde ich als <strong>{{age}}-jähriger</strong> diese Steigerungen erleben",
+  "GRAPHIC_GRAPHIC_TEXT_REGION": "In einer <strong>{{temp}} ℃</strong> Welt werde ich als <strong>{{age}}-jähriger</strong> aus <strong>{{region}}</strong> diese Steigerungen erleben"
 }
