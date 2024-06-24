@@ -8,7 +8,7 @@
   import Twitter from '../Icons/Twitter.svelte';
   import WhatsApp from '../Icons/WhatsApp.svelte';
 
-  $: params = { temp: `${$CURRENT_TEMPERATURE}°C`, age: $CURRENT_AGE };
+  $: params = { temp: $CURRENT_TEMPERATURE, age: $CURRENT_AGE };
   $: params_short = { ...params, region: $CURRENT_REGION_SHORT };
   $: params_long = { ...params, region: $CURRENT_REGION };
   $: text_start_short = $CURRENT_REGION_INDEX_NUMBER > 0 ? $t('content.GRAPHIC_TEXT_1_REGION_CLEAN', params_short) : $t('content.GRAPHIC_TEXT_1_CLEAN', params);
