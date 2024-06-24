@@ -11,7 +11,7 @@ const config = {
     adapter: adapter(),
     alias: {
       $config: 'src/config.ts',
-      $store: 'src/store.js',
+      $store: 'src/store.ts',
       $utils: 'src/utils.ts',
       $styles: 'src/styles',
     },
