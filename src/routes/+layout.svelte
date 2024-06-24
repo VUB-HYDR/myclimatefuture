@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from '$lib/Layout/Header.svelte';
   import { CURRENT_TEMPERATURE_INDEX } from '$store';
+  import { version } from '$app/environment';
   import { t, locale } from '$lib/translations';
   import 'tippy.js/dist/tippy.css';
   import '../styles/app.scss';
@@ -10,13 +11,27 @@
   $: temperatureClass = `level-${$CURRENT_TEMPERATURE_INDEX}`;
 </script>
 
+<svelte:head>
+  <meta
+    name="version"
+    content={version}
+  />
+</svelte:head>
+
 <Header />
 
-<main class="wrapper {temperatureClass}" style="--color-accent: var(--color-accent-{$CURRENT_TEMPERATURE_INDEX})" lang={$locale}>
+<main
+  class="wrapper {temperatureClass}"
+  style="--color-accent: var(--color-accent-{$CURRENT_TEMPERATURE_INDEX})"
+  lang={$locale}
+>
   <slot />
 </main>
 
-<footer class="page-footer wrapper" lang={$locale}>
+<footer
+  class="page-footer wrapper"
+  lang={$locale}
+>
   <p class="column">{$t('content.COPYRIGHT', { year: new Date().getFullYear() })} {@html $t('content.AUTHOR_DESIGN', { link: '<a href="https://jonasparnow.com" class="quiet">Jonas Parnow</a>' })} {@html $t('content.SOURCE_CODE', { link: '<a href="https://github.com/VUB-HYDR/myclimatefuture" class="quiet">Github</a>' })}</p>
 </footer>
 

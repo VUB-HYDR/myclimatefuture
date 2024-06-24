@@ -15,6 +15,9 @@ const config = {
       $utils: 'src/utils.ts',
       $styles: 'src/styles',
     },
+    version: {
+      name: process.env.npm_package_version,
+    },
   },
   preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
 };
