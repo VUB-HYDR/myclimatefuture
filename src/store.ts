@@ -31,11 +31,12 @@ export const LOCALE_URL = derived(locale, ($locale) => getLocaleURL($locale));
 export const CURRENT_YEAR_SLIDER = writable<number[]>([LAST_YEAR - DEFAULT_AGE]);
 export const CURRENT_YEAR = derived(CURRENT_YEAR_SLIDER, ($years) => $years[0]);
 export const CURRENT_AGE = derived(CURRENT_YEAR, ($year) => new Date().getFullYear() - $year);
+export const CURRENT_AGE_INDEX = derived(CURRENT_YEAR, ($year) => LAST_YEAR - $year);
 export const CURRENT_REGION_INDEX = writable<string>(DEFAULT_REGION);
 export const CURRENT_REGION_INDEX_NUMBER = derived(CURRENT_REGION_INDEX, ($index) => parseInt($index));
 export const CURRENT_TEMPERATURE_INDEX = writable<string>(DEFAULT_TEMPERATURE);
 
-export const VALUES = derived([CURRENT_AGE, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, FORMAT_NUMBER], ([$age, $region, $temperature, $format]) => {
+export const VALUES = derived([CURRENT_AGE_INDEX, CURRENT_REGION_INDEX, CURRENT_TEMPERATURE_INDEX, FORMAT_NUMBER], ([$age, $region, $temperature, $format]) => {
   return RISKS.map((r, n) => {
     const value = getValue(data, parseInt($region), n, parseInt($temperature), $age) ?? 0;
     return [value, $format(value)];
